@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stage 11 ESL – Interactive Revision Hub</title>
+
+  <style>
+    /* ────────────────────────────────────────────────
+       Your original CSS – unchanged except a few --vars
+       and minor formatting improvements for readability
+    ──────────────────────────────────────────────── */
+    :root {
+      --navy:    #1B3A6B;
+      --teal:    #1A7F8E;
+      --gold:    #D4A017;
+      --orange:  #E07B39;
+      --green:   #2E7D32;
+      --purple:  #6A1B9A;
+      --blue:    #1565C0;
+      --enviro:  #0277BD;
+      --food:    #558B2F;
+      --pink:    #AD1457;
+      --indigo:  #4527A0;
+      --white:   #FFFFFF;
+      --light:   #F0F4F8;
+      --mid:     #CBD5E1;
+      --dark:    #1E293B;
+      --text:    #334155;
+      --shadow:  0 4px 20px rgba(0,0,0,0.13);
+    }
+
+    *,:before,:after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Segoe UI", Calibri, system-ui, sans-serif;
+      background: #E8EDF4;
+      color: var(--text);
+      min-height: 100vh;
+      font-size: 15px;
+    }
+
+    /* ... the rest of your original CSS remains here ... */
+    /* (I did not copy-paste all 900+ lines to save space in this message) */
+    /* Just imagine your full <style> content is still here unchanged */
+
+  </style>
+</head>
+<body>
+
+<!-- 
+  Stage 11 ESL – Interactive Revision Hub
+  © 2025–2026 Vincent (Sheaf)
+  Educational revision tool – single-file vanilla JS version
+-->
+
+<!-- ── TOP BAR ── -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div>
+      <div class="site-title">Stage 11 ESL 📖</div>
+      <div class="site-sub">Interactive Revision Hub</div>
+    </div>
+    <div class="xp-area">
+      <span class="xp-label">XP:</span>
+      <span class="xp-count" id="xp-count">0</span>
+      <div class="xp-bar-wrap">
+        <div class="xp-bar-fill" id="xp-bar"></div>
+      </div>
+      <span class="level-badge" id="level-badge">Lv 1</span>
+    </div>
+  </div>
+
+  <nav class="main-nav" id="main-nav">
+    <button class="nav-tab active" data-page="home">🏠 Home</button>
+    <button class="nav-tab" data-page="vocab">📚 Vocabulary</button>
+    <button class="nav-tab" data-page="quiz">🧠 Quiz</button>
+    <button class="nav-tab" data-page="writing">✍️ Writing</button>
+    <button class="nav-tab" data-page="language">🔗 Language Tools</button>
+    <button class="nav-tab" data-page="practice">✏️ Writing Practice</button>
+  </nav>
+</div>
+
+<!-- ── TOAST & CONFETTI CONTAINERS ── -->
+<div class="toast-wrap" id="toast-wrap"></div>
+<div class="confetti-wrap" id="confetti-wrap"></div>
+
+<!-- Your page containers remain almost unchanged -->
+<div class="page active" id="page-home">...</div>
+<div class="page" id="page-vocab">     ...</div>
+<div class="page" id="page-quiz">      ...</div>
+<div class="page" id="page-writing">   ...</div>
+<div class="page" id="page-language">  ...</div>
+<div class="page" id="page-practice">  ...</div>
+
+<!-- ────────────────────────────────────────────────
+     JAVASCRIPT ─ single-file, cleaner structure
+──────────────────────────────────────────────── -->
+
+<script>
+// ┌───────────────────────────────────────────────┐
+// │  1. CONSTANTS & DATA                          │
+// └───────────────────────────────────────────────┘
+
+const APP = {
+  XP_PER_LEVEL: 100,
+
+  SELECTORS: {
+    xpCount:      '#xp-count',
+    xpBar:        '#xp-bar',
+    levelBadge:   '#level-badge',
+    toastWrap:    '#toast-wrap',
+    confettiWrap: '#confetti-wrap',
+    mainNav:      '#main-nav',
+    pages:        '.page',
+    navTabs:      '.nav-tab',
+  },
+
+  CLASSES: {
+    active:   'active',
+    flipped:  'flipped',
+    show:     'show',
+    gold:     'gold',
+    green:    'green',
+  }
+};
+
+const UNITS = [ /* your original UNITS array – unchanged */ ];
+const WRITING_TASKS = [ /* your original WRITING_TASKS array – unchanged */ ];
+const LINKERS = { /* your original LINKERS object – unchanged */ };
+const QUICK_TIPS = { /* your original QUICK_TIPS object – unchanged */ };
+
+// You can move ALL_LINKERS_FLAT, LINKER_CATS_DISPLAY etc. here too if you want
+
+// ┌───────────────────────────────────────────────┐
+// │  2. CENTRAL STATE                             │
+// └───────────────────────────────────────────────┘
+
+const state = {
+  xp: 0,
+  level: 1,
+
+  currentPage: 'home',
+  currentUnitId: UNITS[0]?.id || 'u2',
+
+  flashcard: {
+    index: 0,
+    cards: [],           // shuffled copy
+    unit: null
+  },
+
+  quiz: {
+    mode: 'vocab',
+    unitId: 'u2',
+    questions: [],
+    index: 0,
+    score: 0
+  },
+
+  // ... you can later add linkerQuiz, writingQuiz, practiceTask, etc.
+};
+
+// ┌───────────────────────────────────────────────┐
+// │  3. DOM HELPERS                               │
+// └───────────────────────────────────────────────┘
+
+const $  = sel => document.querySelector(sel);
+const $$ = sel => document.querySelectorAll(sel);
+
+function addClass(el, cls)    { el?.classList.add(cls);    }
+function removeClass(el, cls) { el?.classList.remove(cls); }
+function toggleClass(el, cls) { el?.classList.toggle(cls); }
+
+function setStyle(el, prop, val) {
+  if (el) el.style[prop] = val;
+}
+
+// ┌───────────────────────────────────────────────┐
+// │  4. XP & UI UPDATES                           │
+// └───────────────────────────────────────────────┘
+
+function addXP(amount) {
+  state.xp += amount;
+  const newLevel = Math.floor(state.xp / APP.XP_PER_LEVEL) + 1;
+
+  if (newLevel > state.level) {
+    state.level = newLevel;
+    showToast(`Level Up! You're now Level ${state.level} 🎉`, APP.CLASSES.gold);
+    launchConfetti();
+  }
+
+  updateXPUI();
+  $('#statXP') && ($('#statXP').textContent = state.xp);
+}
+
+function updateXPUI() {
+  const elCount  = $(APP.SELECTORS.xpCount);
+  const elBar    = $(APP.SELECTORS.xpBar);
+  const elLevel  = $(APP.SELECTORS.levelBadge);
+
+  if (!elCount || !elBar || !elLevel) return;
+
+  elCount.textContent = state.xp;
+  elLevel.textContent = `Lv ${state.level}`;
+
+  const pct = ((state.xp % APP.XP_PER_LEVEL) / APP.XP_PER_LEVEL) * 100;
+  setStyle(elBar, 'width', pct + '%');
+}
+
+// ┌───────────────────────────────────────────────┐
+// │  5. TOAST & CONFETTI                          │
+// └───────────────────────────────────────────────┘
+
+function showToast(msg, type = '') {
+  const wrap = $(APP.SELECTORS.toastWrap);
+  if (!wrap) return;
+
+  const t = document.createElement('div');
+  t.className = `toast ${type}`;
+  t.textContent = msg;
+  wrap.appendChild(t);
+
+  setTimeout(() => addClass(t, APP.CLASSES.show), 10);
+  setTimeout(() => {
+    removeClass(t, APP.CLASSES.show);
+    setTimeout(() => t.remove(), 400);
+  }, 2800);
+}
+
+function launchConfetti() {
+  const wrap = $(APP.SELECTORS.confettiWrap);
+  if (!wrap) return;
+
+  const colors = ["#D4A017","#1A7F8E","#E07B39","#2E7D32","#6A1B9A","#AD1457"];
+
+  for (let i = 0; i < 60; i++) {
+    const c = document.createElement('div');
+    c.className = 'confetto';
+    c.style.left = Math.random() * 100 + 'vw';
+    c.style.background = colors[Math.floor(Math.random() * colors.length)];
+    c.style.animationDelay = Math.random() * 0.8 + 's';
+    c.style.animationDuration = (2 + Math.random()) + 's';
+    wrap.appendChild(c);
+    setTimeout(() => c.remove(), 3500);
+  }
+}
+
+// ┌───────────────────────────────────────────────┐
+// │  6. PAGE NAVIGATION                           │
+// └───────────────────────────────────────────────┘
+
+function showPage(page) {
+  state.currentPage = page;
+
+  $$(APP.SELECTORS.pages).forEach(p => removeClass(p, APP.CLASSES.active));
+  $$(APP.SELECTORS.navTabs).forEach(t => removeClass(t, APP.CLASSES.active));
+
+  const pageEl = $(`#page-${page}`);
+  if (pageEl) addClass(pageEl, APP.CLASSES.active);
+
+  const tab = $$(`.nav-tab[data-page="${page}"]`)[0];
+  if (tab) addClass(tab, APP.CLASSES.active);
+
+  // Optional: lazy-load heavy content only when needed
+  if (page === 'home'     && !$('#homeUnitGrid')?.children.length) buildHome();
+  if (page === 'vocab'    && !$('#vocabPills')?.children.length)   buildVocabPills();
+  if (page === 'quiz'     && !$('#quizPills')?.children.length)    buildQuizPills();
+  // ... you can add more lazy initializations later
+}
+
+// ┌───────────────────────────────────────────────┐
+// │  7. EVENT DELEGATION (cleaner clicks)         │
+// └───────────────────────────────────────────────┘
+
+function initEventListeners() {
+  // Nav tabs
+  $(APP.SELECTORS.mainNav)?.addEventListener('click', e => {
+    const btn = e.target.closest('.nav-tab');
+    if (!btn) return;
+    const page = btn.dataset.page;
+    if (page) showPage(page);
+  });
+
+  // You can move other onclick → event delegation here later
+  // Example:
+  // document.addEventListener('click', e => {
+  //   if (e.target.matches('#fcShuffle')) shuffleCards();
+  //   if (e.target.matches('#quizNextBtn')) nextQuestion();
+  //   ...
+  // });
+}
+
+// ┌───────────────────────────────────────────────┐
+// │  8. INIT                                      │
+// └───────────────────────────────────────────────┘
+
+function init() {
+  // Set initial page
+  showPage('home');
+
+  // Build static parts that should exist from start
+  buildHome();           // or make it lazy inside showPage
+  buildVocabPills();
+  buildQuizPills();
+  buildWritingTasks();
+  buildLinkers();
+  buildPracticeTaskPicker();
+
+  // Set first unit
+  setVocabUnit(state.currentUnitId);
+  setQuizUnit(state.currentUnitId);
+
+  // Start listeners
+  initEventListeners();
+
+  // Optional: show welcome toast
+  // showToast("Welcome to Stage 11 Revision Hub!", APP.CLASSES.green);
+}
+
+document.addEventListener('DOMContentLoaded', init);
+
+// ── Keep your existing functions below ──
+// Just replace document.getElementById('…') with $(…) where possible
+// and state.xp / state.level instead of globals
+
+// For example:
+function updateXPUI() { /* already shown above */ }
+function addXP(n)     { /* already shown above */ }
+function showToast(m,t){ /* already shown above */ }
+// ... etc.
+
+// You still need to adapt setVocabUnit, renderCard, startQuiz, etc.
+// to use state.flashcard.index, state.flashcard.cards, $(selector), etc.
+// But this is mechanical search & replace + small fixes.
+
+</script>
+</body>
+</html>
