@@ -512,6 +512,79 @@ body {
 .score-mini-cat { text-align: center; }
 .score-mini-num { font-size: 1.1rem; font-weight: 800; }
 .score-mini-lbl { font-size: 0.65rem; color: #94A3B8; }
+
+/* =====================================================
+   PROGRESS & CERTIFICATE
+   ===================================================== */
+.progress-section { margin-top: 24px; }
+.progress-header  { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px; }
+.progress-header h2 { font-size: 1rem; font-weight: 800; color: #475569; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.activity-pill {
+  background: white; border: 2px solid #E2E8F0; border-radius: 20px;
+  padding: 5px 12px; font-size: 0.75rem; font-weight: 700; color: #94A3B8;
+  cursor: pointer; transition: all 0.18s; display: inline-block;
+}
+.activity-pill:hover { border-color: var(--navy); color: var(--navy); }
+
+.completion-banner {
+  border-radius: 14px; padding: 18px 22px; margin-bottom: 20px; color: white;
+  display: none;
+}
+.completion-banner.show { display: block; }
+
+/* Certificate Modal */
+.cert-modal {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.82); z-index: 1000; overflow-y: auto;
+  padding: 20px; display: none; align-items: flex-start; justify-content: center;
+}
+.cert-modal.show { display: flex; }
+.cert-wrapper { max-width: 820px; width: 100%; margin: auto; }
+.cert-controls {
+  background: #1E293B; border-radius: 14px 14px 0 0;
+  padding: 14px 22px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+}
+.cert-controls label { color: #94A3B8; font-size: 0.82rem; font-weight: 700; }
+.cert-name-input {
+  flex: 1; min-width: 180px; padding: 8px 14px; border-radius: 20px;
+  border: 2px solid #334155; background: #0F172A; color: white;
+  font-size: 0.9rem; font-weight: 600; outline: none;
+}
+.cert-name-input:focus { border-color: var(--gold); }
+.cert-name-input::placeholder { color: #475569; }
+
+/* Certificate document */
+#certDoc {
+  background: white; padding: 50px 56px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+.cert-outer {
+  border: 4px double var(--gold);
+  border-radius: 4px; padding: 36px 40px;
+  background: linear-gradient(160deg, #FDFCF3 0%, #FFF9E6 100%);
+}
+.cert-deco    { text-align: center; letter-spacing: 12px; color: var(--gold); }
+.cert-title   { font-size: 2rem; font-weight: 900; color: var(--navy); letter-spacing: 2px; text-transform: uppercase; }
+.cert-divider { height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 20px 40px; }
+.cert-name    { font-size: 2.2rem; font-style: italic; color: var(--navy); border-bottom: 2px solid var(--gold); display: inline-block; padding: 0 8px 4px; }
+.cert-stat-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin: 20px; }
+.cert-stat { background: white; border-radius: 10px; padding: 14px 8px; border: 1.5px solid #E2E8F0; text-align: center; }
+.cert-stat-num { font-size: 1.5rem; font-weight: 900; }
+.cert-stat-lbl { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.5px; color: #94A3B8; margin-top: 2px; }
+.cert-sig-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 0 20px; }
+.cert-sig-name { font-size: 1rem; font-style: italic; font-weight: 700; color: var(--navy); text-align: center; margin-bottom: 4px; }
+.cert-sig-line { height: 1px; background: #CBD5E1; margin-bottom: 4px; }
+.cert-sig-role { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; color: #94A3B8; text-align: center; }
+
+/* Print styles */
+@media print {
+  body > *                        { display: none !important; }
+  .cert-modal                     { display: block !important; position: static !important; background: none !important; padding: 0 !important; overflow: visible !important; }
+  .cert-wrapper                   { max-width: 100% !important; }
+  .cert-controls, .cert-no-print  { display: none !important; }
+  #certDoc                        { padding: 0 !important; }
+}
 </style>
 </head>
 <body>
@@ -560,10 +633,27 @@ body {
 
   <div class="divider"></div>
   <div class="stats-row">
-    <div class="stat-box"><div class="stat-num" id="statWords">120+</div><div class="stat-lbl">Vocabulary Words</div></div>
+    <div class="stat-box"><div class="stat-num" id="statWords">135</div><div class="stat-lbl">Vocabulary Words</div></div>
     <div class="stat-box"><div class="stat-num">9</div><div class="stat-lbl">Units Covered</div></div>
     <div class="stat-box"><div class="stat-num">6</div><div class="stat-lbl">Writing Task Types</div></div>
     <div class="stat-box"><div class="stat-num" id="statXP">0</div><div class="stat-lbl">XP Earned</div></div>
+    <div class="stat-box"><div class="stat-num" id="statActivities">0/23</div><div class="stat-lbl">Activities Done</div></div>
+  </div>
+
+  <!-- Completion banner (hidden until progress is made) -->
+  <div class="completion-banner" id="completionBanner"></div>
+
+  <!-- Progress Section -->
+  <div class="progress-section">
+    <div class="progress-header">
+      <h2>📊 My Progress</h2>
+      <button class="btn btn-primary" onclick="showCertificate()" style="background:linear-gradient(135deg,var(--gold),#E8C547);color:var(--navy);">🎓 Get Certificate</button>
+    </div>
+    <div id="progressContent">
+      <div style="text-align:center;padding:28px;color:#94A3B8;font-size:0.9rem;background:white;border-radius:14px;box-shadow:var(--shadow);">
+        Complete some activities to see your personalised progress report here.
+      </div>
+    </div>
   </div>
 </div>
 
@@ -867,6 +957,79 @@ body {
     <div id="practiceFeedbackPanel" style="display:none;"></div>
   </div>
 </div>
+
+<!-- ====================================================
+     CERTIFICATE MODAL
+     ==================================================== -->
+<div class="cert-modal" id="certificateModal">
+  <div class="cert-wrapper">
+
+    <!-- Controls bar -->
+    <div class="cert-controls cert-no-print">
+      <label for="certName">Your name:</label>
+      <input class="cert-name-input" id="certName" type="text" placeholder="Type your name here…" oninput="updateCertPreview()" maxlength="50">
+      <button class="btn btn-primary" onclick="window.print()" style="background:var(--gold);color:var(--navy);">🖨️ Print / Save PDF</button>
+      <button class="btn btn-outline" onclick="closeCertificate()" style="border-color:rgba(255,255,255,0.3);color:white;margin-left:auto;">✕ Close</button>
+    </div>
+
+    <!-- Certificate document -->
+    <div id="certDoc">
+      <div class="cert-outer">
+        <div class="cert-deco" style="font-size:1.6rem;margin-bottom:8px;">✦ ✦ ✦</div>
+
+        <div style="text-align:center;margin-bottom:18px;">
+          <div style="font-size:0.72rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#64748B;margin-bottom:6px;">Stage 11 ESL · Interactive Revision Hub</div>
+          <div class="cert-title">Certificate of Achievement</div>
+        </div>
+
+        <div class="cert-divider"></div>
+
+        <div style="text-align:center;margin-bottom:18px;">
+          <div style="font-size:0.95rem;color:#64748B;margin-bottom:10px;">This is to certify that</div>
+          <div class="cert-name" id="certNameDisplay">Student</div>
+          <div style="font-size:0.95rem;color:#64748B;margin-top:12px;line-height:1.65;">
+            has demonstrated dedication and achievement by completing the<br>
+            <strong style="color:var(--navy);">Stage 11 ESL Interactive Revision Programme</strong>
+          </div>
+        </div>
+
+        <!-- Stats row -->
+        <div class="cert-stat-grid">
+          <div class="cert-stat">
+            <div class="cert-stat-num" id="certGrade" style="color:var(--navy);">—</div>
+            <div class="cert-stat-lbl">Grade</div>
+          </div>
+          <div class="cert-stat">
+            <div class="cert-stat-num" id="certXP" style="color:var(--gold);">0</div>
+            <div class="cert-stat-lbl">XP Earned</div>
+          </div>
+          <div class="cert-stat">
+            <div class="cert-stat-num" id="certLevel" style="color:var(--teal);">Lv 1</div>
+            <div class="cert-stat-lbl">Level</div>
+          </div>
+          <div class="cert-stat">
+            <div class="cert-stat-num" id="certCompletion" style="color:var(--green);">0%</div>
+            <div class="cert-stat-lbl">Complete</div>
+          </div>
+        </div>
+
+        <!-- Strengths -->
+        <div id="certStrengths" style="text-align:center;margin:14px 20px;font-size:0.82rem;color:#64748B;min-height:20px;"></div>
+
+        <div class="cert-divider"></div>
+
+        <!-- Date -->
+        <div style="text-align:center;margin-bottom:16px;">
+          <div style="font-size:0.72rem;text-transform:uppercase;letter-spacing:1.5px;color:#94A3B8;">Date of Achievement</div>
+          <div style="font-size:1rem;font-weight:700;color:var(--navy);margin-top:5px;" id="certDate">—</div>
+        </div>
+
+        <div class="cert-deco" style="font-size:1.3rem;letter-spacing:8px;margin-top:4px;">✦ ✦ ✦</div>
+      </div><!-- .cert-outer -->
+    </div><!-- #certDoc -->
+
+  </div><!-- .cert-wrapper -->
+</div><!-- .cert-modal -->
 
 <!-- ====================================================
      JAVASCRIPT DATA & LOGIC
@@ -1245,6 +1408,15 @@ let fcIndex = 0, fcShuffled = [];
 let quizUnit = UNITS[0], quizQuestions = [], quizIndex = 0, quizScore = 0;
 let activeChecklist = {};
 
+// Progress tracking
+var PROGRESS = {
+  vocab:      {},   // uid → { attempts, bestScore, totalQ }
+  linker:     { attempts: 0, bestScore: 0, totalQ: 10 },
+  writingQuiz:{ attempts: 0, bestScore: 0, totalQ: 12 },
+  practice:   {},   // taskType → { attempts, bestScore (0–100) }
+  checklists: {}    // taskIndex → true when fully ticked
+};
+
 // =====================================================
 // XP SYSTEM
 // =====================================================
@@ -1529,6 +1701,7 @@ function showQuizResult() {
   const pct = Math.round((quizScore / quizQuestions.length) * 100);
   const bonusXP = pct >= 80 ? 50 : pct >= 60 ? 25 : 10;
   addXP(bonusXP);
+  recordVocabResult(quizUnit.id, quizScore, quizQuestions.length);
   if (pct >= 90) { launchConfetti(); }
   const emojis = pct>=90?"🎉":pct>=70?"😊":pct>=50?"👍":"💪";
   const titles = pct>=90?"Outstanding!":pct>=70?"Well done!":pct>=50?"Good effort!":"Keep practising!";
@@ -1629,6 +1802,7 @@ function toggleCheck(id, label) {
   if (done === total) {
     showToast("Checklist complete! +20 XP 🌟", "green");
     addXP(20);
+    recordChecklistDone(parseInt(ti));
   }
 }
 
@@ -1666,6 +1840,245 @@ function showLinkerSection(id) {
   document.querySelectorAll('.linker-tab').forEach(t => t.classList.remove('active'));
   document.getElementById('ls-' + id).classList.add('active');
   event.target.classList.add('active');
+}
+
+// =====================================================
+// PROGRESS TRACKING
+// =====================================================
+function recordVocabResult(uid, score, total) {
+  if (!PROGRESS.vocab[uid]) PROGRESS.vocab[uid] = { attempts: 0, bestScore: 0, totalQ: total };
+  PROGRESS.vocab[uid].attempts++;
+  PROGRESS.vocab[uid].totalQ = total;
+  if (score > PROGRESS.vocab[uid].bestScore) PROGRESS.vocab[uid].bestScore = score;
+  refreshProgressUI();
+}
+function recordLinkerResult(score, total) {
+  PROGRESS.linker.attempts++;
+  PROGRESS.linker.totalQ = total;
+  if (score > PROGRESS.linker.bestScore) PROGRESS.linker.bestScore = score;
+  refreshProgressUI();
+}
+function recordWritingQuizResult(score, total) {
+  PROGRESS.writingQuiz.attempts++;
+  PROGRESS.writingQuiz.totalQ = total;
+  if (score > PROGRESS.writingQuiz.bestScore) PROGRESS.writingQuiz.bestScore = score;
+  refreshProgressUI();
+}
+function recordPracticeResult(taskType, score) {
+  if (!PROGRESS.practice[taskType]) PROGRESS.practice[taskType] = { attempts: 0, bestScore: 0 };
+  PROGRESS.practice[taskType].attempts++;
+  if (score > PROGRESS.practice[taskType].bestScore) PROGRESS.practice[taskType].bestScore = score;
+  refreshProgressUI();
+}
+function recordChecklistDone(ti) {
+  PROGRESS.checklists[ti] = true;
+  refreshProgressUI();
+}
+
+// Build a flat array of all trackable activities
+function getProgressItems() {
+  var items = [];
+  UNITS.forEach(function(u) {
+    var p = PROGRESS.vocab[u.id];
+    var att = !!(p && p.attempts > 0);
+    items.push({
+      label:     u.num + ' — ' + u.name,
+      sublabel:  'Vocabulary Quiz',
+      pct:       att ? Math.round((p.bestScore / p.totalQ) * 100) : 0,
+      attempted: att,
+      color:     u.color,
+      nav:       function() { setQuizUnit(u.id); showPage('quiz'); }
+    });
+  });
+  var lp = PROGRESS.linker;
+  items.push({
+    label: 'Linking Devices Quiz', sublabel: 'Quiz',
+    pct: lp.attempts > 0 ? Math.round((lp.bestScore / lp.totalQ) * 100) : 0,
+    attempted: lp.attempts > 0, color: '#1B3A6B',
+    nav: function() {
+      var b = document.querySelectorAll('.quiz-mode-btn')[1];
+      if (b) switchQuizMode('linker', b); showPage('quiz');
+    }
+  });
+  var wq = PROGRESS.writingQuiz;
+  items.push({
+    label: 'Writing Types Quiz', sublabel: 'Quiz',
+    pct: wq.attempts > 0 ? Math.round((wq.bestScore / wq.totalQ) * 100) : 0,
+    attempted: wq.attempts > 0, color: '#AD1457',
+    nav: function() {
+      var b = document.querySelectorAll('.quiz-mode-btn')[2];
+      if (b) switchQuizMode('writing', b); showPage('quiz');
+    }
+  });
+  WRITING_TASKS.forEach(function(task, i) {
+    var p = PROGRESS.practice[task.type];
+    var att = !!(p && p.attempts > 0);
+    items.push({
+      label: task.type, sublabel: 'Writing Practice',
+      pct:       att ? p.bestScore : 0,
+      attempted: att, color: task.color,
+      nav: (function(idx){ return function(){ selectPracticeTask(idx); showPage('practice'); }; })(i)
+    });
+  });
+  return items;
+}
+
+function refreshProgressUI() {
+  var items      = getProgressItems();
+  var attempted  = items.filter(function(i) { return i.attempted; });
+  var notDone    = items.filter(function(i) { return !i.attempted; });
+  var needsWork  = attempted.filter(function(i) { return i.pct < 60; })
+                            .sort(function(a,b) { return a.pct - b.pct; });
+  var strengths  = attempted.filter(function(i) { return i.pct >= 75; })
+                            .sort(function(a,b) { return b.pct - a.pct; });
+  var improving  = attempted.filter(function(i) { return i.pct >= 60 && i.pct < 75; });
+  var completionPct = Math.round((attempted.length / items.length) * 100);
+
+  // Update stat box
+  var sa = document.getElementById('statActivities');
+  if (sa) sa.textContent = attempted.length + '/' + items.length;
+
+  // Completion banner
+  var banner = document.getElementById('completionBanner');
+  if (banner) {
+    if (completionPct >= 80) {
+      banner.className = 'completion-banner show';
+      banner.style.background = 'linear-gradient(135deg,#1B3A6B,#1A7F8E)';
+      banner.innerHTML =
+        '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">' +
+        '<div><div style="font-size:1.1rem;font-weight:800;margin-bottom:4px;">🎉 Amazing work — ' + completionPct + '% complete!</div>' +
+        '<div style="font-size:0.85rem;opacity:0.9;">You\'ve put in serious effort. Collect your certificate now!</div></div>' +
+        '<button class="btn" onclick="showCertificate()" style="background:var(--gold);color:var(--navy);font-weight:800;">🎓 Get Certificate</button>' +
+        '</div>';
+    } else if (completionPct >= 40) {
+      banner.className = 'completion-banner show';
+      banner.style.background = 'linear-gradient(135deg,#2E7D32,#388E3C)';
+      banner.innerHTML =
+        '<div style="font-size:1rem;font-weight:800;margin-bottom:2px;">💪 Good progress — ' + completionPct + '% complete!</div>' +
+        '<div style="font-size:0.83rem;opacity:0.9;">Keep going — complete more activities to unlock your certificate.</div>';
+    } else {
+      banner.className = 'completion-banner';
+    }
+  }
+
+  // Progress content panel on home page
+  var el = document.getElementById('progressContent');
+  if (!el) return;
+  if (attempted.length === 0) {
+    el.innerHTML = '<div style="text-align:center;padding:28px;color:#94A3B8;font-size:0.9rem;background:white;border-radius:14px;box-shadow:var(--shadow);">Complete some activities to see your personalised progress report here.</div>';
+    return;
+  }
+
+  var html = '';
+
+  // Overall bar
+  html += '<div style="background:white;border-radius:14px;padding:18px 22px;margin-bottom:16px;box-shadow:var(--shadow);">' +
+    '<div style="display:flex;justify-content:space-between;margin-bottom:8px;">' +
+    '<span style="font-size:0.85rem;font-weight:800;color:var(--dark);">Overall Completion</span>' +
+    '<span style="font-size:0.85rem;font-weight:800;color:var(--navy);">' + attempted.length + ' / ' + items.length + ' activities · ' + completionPct + '%</span>' +
+    '</div>' +
+    '<div style="height:12px;background:#E2E8F0;border-radius:6px;overflow:hidden;">' +
+    '<div style="height:100%;width:' + completionPct + '%;background:linear-gradient(90deg,var(--navy),var(--teal));border-radius:6px;transition:width 0.8s;"></div>' +
+    '</div></div>';
+
+  // Focus areas
+  if (needsWork.length > 0) {
+    html += '<div style="margin-bottom:18px;">';
+    html += '<div style="font-size:0.78rem;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:#C62828;margin-bottom:10px;">📌 Focus on These — Needs More Practice</div>';
+    html += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;">';
+    needsWork.slice(0, 6).forEach(function(item) {
+      html += makeProgressCard(item, '#C62828', '#FFEBEE', item.pct + '% — Needs more practice');
+    });
+    html += '</div></div>';
+  }
+
+  // Improving
+  if (improving.length > 0) {
+    html += '<div style="margin-bottom:18px;">';
+    html += '<div style="font-size:0.78rem;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:#E07B39;margin-bottom:10px;">📈 Making Good Progress — Keep Going!</div>';
+    html += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;">';
+    improving.slice(0, 4).forEach(function(item) {
+      html += makeProgressCard(item, '#E07B39', '#FFF3E0', item.pct + '% — Improving!');
+    });
+    html += '</div></div>';
+  }
+
+  // Not attempted
+  if (notDone.length > 0) {
+    html += '<div style="margin-bottom:18px;">';
+    html += '<div style="font-size:0.78rem;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:#94A3B8;margin-bottom:10px;">⏳ Not Yet Attempted (' + notDone.length + ')</div>';
+    html += '<div style="display:flex;flex-wrap:wrap;gap:8px;">';
+    notDone.slice(0, 9).forEach(function(item) {
+      html += '<span class="activity-pill" onclick="(' + item.nav.toString() + '())">' + item.label + '</span>';
+    });
+    if (notDone.length > 9) html += '<span style="color:#94A3B8;font-size:0.78rem;padding:6px 12px;">+' + (notDone.length - 9) + ' more</span>';
+    html += '</div></div>';
+  }
+
+  // Strengths
+  if (strengths.length > 0) {
+    html += '<div>';
+    html += '<div style="font-size:0.78rem;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:#2E7D32;margin-bottom:10px;">⭐ Your Strengths — Well Done!</div>';
+    html += '<div style="display:flex;flex-wrap:wrap;gap:8px;">';
+    strengths.forEach(function(item) {
+      html += '<span style="background:#E8F5E9;border-radius:20px;padding:5px 14px;font-size:0.78rem;font-weight:700;color:#2E7D32;">' + item.label + ' · ' + item.pct + '%</span>';
+    });
+    html += '</div></div>';
+  }
+
+  el.innerHTML = html;
+}
+
+function makeProgressCard(item, barColor, bgColor, statusText) {
+  var navStr = item.nav.toString();
+  return '<div style="background:white;border-radius:12px;padding:12px 14px;box-shadow:var(--shadow);border-left:4px solid ' + item.color + ';cursor:pointer;" onclick="(' + navStr + '())">' +
+    '<div style="font-size:0.82rem;font-weight:700;color:var(--dark);margin-bottom:2px;">' + item.label + '</div>' +
+    '<div style="font-size:0.7rem;color:#94A3B8;margin-bottom:7px;">' + item.sublabel + '</div>' +
+    '<div style="height:5px;background:#E2E8F0;border-radius:3px;overflow:hidden;margin-bottom:4px;">' +
+    '<div style="height:100%;width:' + item.pct + '%;background:' + barColor + ';border-radius:3px;"></div></div>' +
+    '<div style="font-size:0.72rem;font-weight:700;color:' + barColor + ';">' + statusText + '</div>' +
+    '</div>';
+}
+
+// =====================================================
+// CERTIFICATE
+// =====================================================
+function showCertificate() {
+  document.getElementById('certificateModal').classList.add('show');
+  updateCertPreview();
+}
+function closeCertificate() {
+  document.getElementById('certificateModal').classList.remove('show');
+}
+function updateCertPreview() {
+  var name = (document.getElementById('certName').value.trim()) || 'Student';
+  document.getElementById('certNameDisplay').textContent = name;
+
+  var items         = getProgressItems();
+  var attempted     = items.filter(function(i) { return i.attempted; });
+  var strengths     = attempted.filter(function(i) { return i.pct >= 75; })
+                               .sort(function(a,b) { return b.pct - a.pct; });
+  var completionPct = Math.round((attempted.length / items.length) * 100);
+
+  var grade = xp >= 2000 ? 'A+' : xp >= 1400 ? 'A' : xp >= 900 ? 'B+' : xp >= 500 ? 'B' : xp >= 200 ? 'C+' : 'C';
+  var gradeColor = (grade === 'A+' || grade === 'A') ? '#2E7D32' :
+                   (grade === 'B+' || grade === 'B') ? '#1565C0' : '#E07B39';
+
+  document.getElementById('certGrade').textContent = grade;
+  document.getElementById('certGrade').style.color = gradeColor;
+  document.getElementById('certXP').textContent    = xp;
+  document.getElementById('certLevel').textContent = 'Lv ' + level;
+  document.getElementById('certCompletion').textContent = completionPct + '%';
+
+  var date = new Date().toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+  document.getElementById('certDate').textContent = date;
+
+  var strEl = document.getElementById('certStrengths');
+  if (strengths.length > 0) {
+    strEl.innerHTML = '⭐ <b>Areas of strength:</b> ' + strengths.slice(0,4).map(function(s){ return s.label; }).join(' · ');
+  } else {
+    strEl.innerHTML = '<em>Complete more activities to build your strengths record.</em>';
+  }
 }
 
 // =====================================================
@@ -2017,6 +2430,7 @@ function feedbackCatHTML(title, score, borderColor, good, issues) {
 function displayFeedback(d) {
   var panel = document.getElementById('practiceFeedbackPanel');
   panel.style.display = '';
+  recordPracticeResult(d.task.type, d.total);
 
   var gradeEmoji = d.grade === 'A' ? '🌟' : d.grade === 'B' ? '👍' : d.grade === 'C' ? '💪' : '📖';
   var gradeMsg   = d.grade === 'A' ? 'Outstanding work!' : d.grade === 'B' ? 'Well done!' :
@@ -2252,6 +2666,7 @@ function showLinkerResult() {
   var pct = Math.round((linkerScore / linkerQuestions.length) * 100);
   var bonusXP = pct >= 80 ? 50 : pct >= 60 ? 25 : 10;
   addXP(bonusXP);
+  recordLinkerResult(linkerScore, linkerQuestions.length);
   if (pct >= 90) launchConfetti();
   var emojis = pct>=90 ? '🎉' : pct>=70 ? '😊' : pct>=50 ? '👍' : '💪';
   var titles = pct>=90 ? 'Outstanding!' : pct>=70 ? 'Well done!' : pct>=50 ? 'Good effort!' : 'Keep practising!';
@@ -2450,6 +2865,7 @@ function showWritingResult() {
   var pct = Math.round((writingScore / writingQuestions.length) * 100);
   var bonusXP = pct >= 80 ? 50 : pct >= 60 ? 25 : 10;
   addXP(bonusXP);
+  recordWritingQuizResult(writingScore, writingQuestions.length);
   if (pct >= 90) launchConfetti();
   var emojis = pct>=90 ? '🎉' : pct>=70 ? '😊' : pct>=50 ? '👍' : '💪';
   var titles = pct>=90 ? 'Outstanding!' : pct>=70 ? 'Well done!' : pct>=50 ? 'Good effort!' : 'Keep practising!';
@@ -2476,6 +2892,7 @@ function init() {
   buildWritingTasks();
   buildLinkers();
   buildPracticeTaskPicker();
+  refreshProgressUI();
   // Activate first unit
   setVocabUnit(UNITS[0].id);
   activatePill(document.getElementById('vocabPills'), UNITS[0].id);
