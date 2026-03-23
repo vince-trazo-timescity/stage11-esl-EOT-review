@@ -2905,15 +2905,16 @@ document.addEventListener('DOMContentLoaded', init);
 </body>
 </html>
 <script>
+<script>
 // =====================================================
 // DATA (UPDATED WITH GLOBAL FOOD CRISIS)
 // =====================================================
-const UNITS = [ /* ← your original UNITS array stays exactly the same */ 
-  /* ... (all 9 units you already have) ... */
+const UNITS = [ /* YOUR ORIGINAL UNITS ARRAY — UNCHANGED */ 
+  /* (keep everything from const UNITS = [ ... ] exactly as it is in your file) */
 ];
 
 const WRITING_TASKS = [
-  /* ... all your other writing tasks (Unit 2 to Unit 11) stay exactly the same ... */
+  /* ALL YOUR OTHER TASKS UNCHANGED (Unit 2 to Unit 11) */
   {
     unit: "Unit 9 — The Environment", type: "Formal Report",
     color: "#0277BD", len: "200–250 words",
@@ -2924,15 +2925,15 @@ const WRITING_TASKS = [
       "D) Write a report on the global food crisis — causes, effects, and possible solutions. (Use Unit 10 vocabulary)"
     ],
     structure: ["Title: 'Report on [Topic]'", "Introduction — state purpose: 'This report aims to…'", "Causes / Background (heading)", "Effects / Findings (heading)", "Recommendations (heading)", "Conclusion — summary + call to action"],
-    tips: [ /* your original tips unchanged */ ],
-    dos: [ /* your original DOs unchanged */ ],
-    donts: [ /* your original DON'Ts unchanged */ ],
-    checklist: [ /* your original checklist unchanged */ ]
-  }
-  /* ... rest of your writing tasks unchanged ... */
+    tips: ["Use clear headings and subheadings for each section", "Use reporting verbs: indicate, suggest, show, reveal", "Use formal connectors: Furthermore, In contrast, Therefore", "Use the passive voice: 'It has been estimated that…'", "Avoid personal pronouns (I, we, you)", "Recommendations must use modal verbs: should, must, could"],
+    dos: ["Use clear headings for each section", "Write in the third person", "Use passive voice: 'Forests are being destroyed…'", "Include specific examples or statistics"],
+    donts: ["Write 'I think' — keep it objective!", "Write continuous paragraphs with no headings", "Use casual or emotional language", "Forget to include an introduction or conclusion"],
+    checklist: ["My report has a clear, informative title", "Introduction states the purpose of the report", "I used headings for each section", "I used the passive voice appropriately", "I used reporting verbs: indicate, suggest, reveal", "I avoided personal pronouns (I, we, you)", "My recommendations use modal verbs", "My conclusion summarises the key points"]
+  },
+  /* rest of your tasks unchanged */
 ];
 
-// === NEW: PERFECT MODEL ANSWER (Global Food Crisis + Unit 10 vocab) ===
+// === GLOBAL FOOD CRISIS MODEL ANSWER ===
 const MODEL_ANSWERS = {
   "Formal Report": `
     <h3 style="color:#0277BD;margin-bottom:12px;">📋 Model Answer – Report on the Global Food Crisis (238 words)</h3>
@@ -2952,53 +2953,7 @@ const MODEL_ANSWERS = {
   `
 };
 
-// [ALL YOUR OTHER FUNCTIONS STAY EXACTLY THE SAME until selectPracticeTask]
-
-// =====================================================
-// UPDATED selectPracticeTask + NEW showModelAnswer
-// =====================================================
-function selectPracticeTask(index) {
-  currentPracticeTask = index;
-  var task = WRITING_TASKS[index];
-  document.getElementById('practiceSelect').style.display = 'none';
-  document.getElementById('practiceWork').style.display = '';
-  document.getElementById('practiceFeedbackPanel').style.display = 'none';
-
-  var banner = document.getElementById('practiceBanner');
-  banner.style.background = task.color;
-  document.getElementById('practiceBannerUnit').textContent = task.unit;
-  document.getElementById('practiceBannerType').textContent = task.type;
-  document.getElementById('practiceBannerLen').textContent = 'Target: ' + task.len;
-
-  var prompt = task.prompts[Math.floor(Math.random() * task.prompts.length)];
-  document.getElementById('practiceBannerPrompt').textContent = prompt;
-  document.getElementById('practiceQuickTipsText').textContent = QUICK_TIPS[task.type] || '';
-
-  document.getElementById('practiceTextarea').value = '';
-  updateWordCount();
-
-  // === NEW MODEL ANSWER BUTTON (only for Formal Report) ===
-  let existingBtn = document.getElementById('modelAnswerBtn');
-  if (existingBtn) existingBtn.remove();
-  if (task.type === "Formal Report") {
-    const btnHTML = `<button class="btn btn-outline btn-sm" id="modelAnswerBtn" onclick="showModelAnswer()" style="margin-left:12px;">📋 View Model Answer (Global Food Crisis)</button>`;
-    document.querySelector('.practice-meta div').insertAdjacentHTML('beforeend', btnHTML);
-  }
-  window.scrollTo(0, 0);
-}
-
-// === NEW FUNCTION: Show the perfect sample ===
-function showModelAnswer() {
-  const panel = document.getElementById('practiceFeedbackPanel');
-  panel.style.display = '';
-  panel.innerHTML = MODEL_ANSWERS["Formal Report"] + 
-    `<div style="text-align:center;margin-top:20px;">
-      <button class="btn btn-primary" onclick="document.getElementById('practiceFeedbackPanel').style.display='none'">✏️ Close Model & Keep Writing</button>
-    </div>`;
-  panel.scrollIntoView({ behavior: 'smooth' });
-}
-
-// [ALL REMAINING FUNCTIONS (analyzeWriting, quizzes, init, etc.) stay 100% unchanged]
+// [ALL YOUR OTHER FUNCTIONS (init, quizzes, etc.) — copy them exactly as they are in your current file from here down to the end]
 
 document.addEventListener('DOMContentLoaded', init);
 </script>
