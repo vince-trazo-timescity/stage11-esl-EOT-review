@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1285,21 +1286,20 @@ const WRITING_TASKS = [
     donts: ["Be vague — be definitive!", "Change your opinion mid-essay", "Repeat ideas without developing them", "Use casual language: 'a lot of', 'really'"],
     checklist: ["My thesis is stated clearly in the introduction", "I gave 2–3 clear arguments", "Each argument is supported with evidence", "I used modal verbs: should / must / could", "I used 5+ linking devices", "I maintained a formal register throughout", "My conclusion restates my opinion in different words", "I did not introduce new ideas in the conclusion"]
   },
-  { 
-  unit: "Unit 9 — The Environment", type: "Formal Report",
-  color: "#0277BD", len: "200–250 words",
-  prompts: [
-    "A) Write a report on the main causes and effects of air pollution in your city or country.",
-    "B) Write a report on the water shortage crisis — causes, effects, and possible solutions.",
-    "C) Write a report on how deforestation is affecting biodiversity around the world.",
-    "D) Write a report on the global food crisis — causes, effects, and possible solutions. (Use Unit 10 vocabulary)"
-  ],
-  structure: ["Title: 'Report on [Topic]'", "Introduction — state purpose: 'This report aims to…'", "Causes / Background (heading)", "Effects / Findings (heading)", "Recommendations (heading)", "Conclusion — summary + call to action"],
-  tips: ["Use clear headings and subheadings for each section", "Use reporting verbs: indicate, suggest, show, reveal", "Use formal connectors: Furthermore, In contrast, Therefore", "Use the passive voice: 'It has been estimated that…'", "Avoid personal pronouns (I, we, you)", "Recommendations must use modal verbs: should, must, could"],
-  dos: ["Use clear headings for each section", "Write in the third person", "Use passive voice: 'Forests are being destroyed…'", "Include specific examples or statistics"],
-  donts: ["Write 'I think' — keep it objective!", "Write continuous paragraphs with no headings", "Use casual or emotional language", "Forget to include an introduction or conclusion"],
-  checklist: ["My report has a clear, informative title", "Introduction states the purpose of the report", "I used headings for each section", "I used the passive voice appropriately", "I used reporting verbs: indicate, suggest, reveal", "I avoided personal pronouns (I, we, you)", "My recommendations use modal verbs", "My conclusion summarises the key points"]
-},
+  {
+    unit: "Unit 9 — The Environment", type: "Formal Report",
+    color: "#0277BD", len: "200–250 words",
+    prompts: [
+      "Write a report on the main causes and effects of air pollution in your city or country.",
+      "Write a report on the water shortage crisis — causes, effects, and possible solutions.",
+      "Write a report on how deforestation is affecting biodiversity around the world."
+    ],
+    structure: ["Title: 'Report on [Topic]'", "Introduction — state purpose: 'This report aims to…'", "Causes / Background (heading)", "Effects / Findings (heading)", "Recommendations (heading)", "Conclusion — summary + call to action"],
+    tips:  ["Use clear headings and subheadings for each section", "Use reporting verbs: indicate, suggest, show, reveal", "Use formal connectors: Furthermore, In contrast, Therefore", "Use the passive voice: 'It has been estimated that…'", "Avoid personal pronouns (I, we, you)", "Recommendations must use modal verbs: should, must, could"],
+    dos:   ["Use clear headings for each section", "Write in the third person", "Use passive voice: 'Forests are being destroyed…'", "Include specific examples or statistics"],
+    donts: ["Write 'I think' — keep it objective!", "Write continuous paragraphs with no headings", "Use casual or emotional language", "Forget to include an introduction or conclusion"],
+    checklist: ["My report has a clear, informative title", "Introduction states the purpose of the report", "I used headings for each section", "I used the passive voice appropriately", "I used reporting verbs: indicate, suggest, reveal", "I avoided personal pronouns (I, we, you)", "My recommendations use modal verbs", "My conclusion summarises the key points"]
+  },
   {
     unit: "Unit 11 — Fashion & Lifestyle", type: "Magazine Article",
     color: "#AD1457", len: "150–200 words",
@@ -2905,56 +2905,3 @@ document.addEventListener('DOMContentLoaded', init);
 </script>
 </body>
 </html>
-<script>
-<script>
-// =====================================================
-// DATA (UPDATED WITH GLOBAL FOOD CRISIS)
-// =====================================================
-const UNITS = [ /* YOUR ORIGINAL UNITS ARRAY — UNCHANGED */ 
-  /* (keep everything from const UNITS = [ ... ] exactly as it is in your file) */
-];
-
-const WRITING_TASKS = [
-  /* ALL YOUR OTHER TASKS UNCHANGED (Unit 2 to Unit 11) */
-  {
-    unit: "Unit 9 — The Environment", type: "Formal Report",
-    color: "#0277BD", len: "200–250 words",
-    prompts: [
-      "A) Write a report on the main causes and effects of air pollution in your city or country.",
-      "B) Write a report on the water shortage crisis — causes, effects, and possible solutions.",
-      "C) Write a report on how deforestation is affecting biodiversity around the world.",
-      "D) Write a report on the global food crisis — causes, effects, and possible solutions. (Use Unit 10 vocabulary)"
-    ],
-    structure: ["Title: 'Report on [Topic]'", "Introduction — state purpose: 'This report aims to…'", "Causes / Background (heading)", "Effects / Findings (heading)", "Recommendations (heading)", "Conclusion — summary + call to action"],
-    tips: ["Use clear headings and subheadings for each section", "Use reporting verbs: indicate, suggest, show, reveal", "Use formal connectors: Furthermore, In contrast, Therefore", "Use the passive voice: 'It has been estimated that…'", "Avoid personal pronouns (I, we, you)", "Recommendations must use modal verbs: should, must, could"],
-    dos: ["Use clear headings for each section", "Write in the third person", "Use passive voice: 'Forests are being destroyed…'", "Include specific examples or statistics"],
-    donts: ["Write 'I think' — keep it objective!", "Write continuous paragraphs with no headings", "Use casual or emotional language", "Forget to include an introduction or conclusion"],
-    checklist: ["My report has a clear, informative title", "Introduction states the purpose of the report", "I used headings for each section", "I used the passive voice appropriately", "I used reporting verbs: indicate, suggest, reveal", "I avoided personal pronouns (I, we, you)", "My recommendations use modal verbs", "My conclusion summarises the key points"]
-  },
-  /* rest of your tasks unchanged */
-];
-
-// === GLOBAL FOOD CRISIS MODEL ANSWER ===
-const MODEL_ANSWERS = {
-  "Formal Report": `
-    <h3 style="color:#0277BD;margin-bottom:12px;">📋 Model Answer – Report on the Global Food Crisis (238 words)</h3>
-    <div style="background:#f0f4f8;padding:20px;border-radius:12px;border-left:6px solid #0277BD;line-height:1.65;font-size:0.95rem;">
-      <strong>Report on the Global Food Crisis</strong><br><br>
-      This report aims to examine the main causes and effects of the global food crisis and to propose viable solutions.<br><br>
-      <strong>Causes / Background</strong><br>
-      Several interconnected factors have contributed to the crisis. Monoculture farming practices have depleted soil nutrients and reduced biodiversity. Furthermore, the overuse of pesticides has polluted waterways and harmed ecosystems. Climate change has intensified droughts and floods, disrupting supply chains and increasing food miles. In addition, rising global consumption of meat and processed food has accelerated deforestation.<br><br>
-      <strong>Effects / Findings</strong><br>
-      These developments have revealed serious consequences. Food security remains a major challenge for developing nations. It has been estimated that hundreds of millions of people lack reliable access to sufficient, nutritious food. Moreover, higher prices have led to increased consumption of processed food, which often contains high levels of salt and sugar.<br><br>
-      <strong>Recommendations</strong><br>
-      Governments should invest in sustainable farming methods such as organic farming and hydroponics. Consumers must support fair trade initiatives and adopt localvore diets to reduce food miles. Genetically modified crops resistant to drought could be promoted responsibly where appropriate.<br><br>
-      <strong>Conclusion</strong><br>
-      In conclusion, the global food crisis threatens both human wellbeing and environmental stability. Urgent coordinated action through sustainable practices is therefore essential to achieve long-term food security for future generations.
-    </div>
-    <p style="font-size:0.82rem;color:#2E7D32;margin-top:12px;">✅ Uses 12+ Unit 10 words • Follows every DO/DON'T & checklist item</p>
-  `
-};
-
-// [ALL YOUR OTHER FUNCTIONS (init, quizzes, etc.) — copy them exactly as they are in your current file from here down to the end]
-
-document.addEventListener('DOMContentLoaded', init);
-</script>
