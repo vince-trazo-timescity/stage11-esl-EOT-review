@@ -8,3 +8,20 @@ test('Specific local edits preserve surrounding text and map to standards',()=>{
 test('Version comparison reports pattern changes, never semantic improvement',()=>{const old={text:'Students helps at a shelter.',analysis:E.analyseWriting('Students helps at a shelter.','essay','','')},next={text:'Students help at a shelter.',analysis:E.analyseWriting('Students help at a shelter.','essay','','')};const c=E.compareVersions(old,next);assert.equal(c.changed,true);assert(c.removed.includes('Check this agreement pattern'));assert(c.note.includes('do not establish'));assert.equal(E.compareVersions(next,next).changed,false);});
 test('Accepted alternatives and typography are handled',()=>{assert(E.answerMatches(' HAD COLLECTED. ',['had collected']));assert(E.answerMatches('student’s work',["student's work"]));const q=E.makeBank('biography','foundation').find(x=>x.kind==='order');assert(E.answerMatches('Before the club opened, Maya had collected books.',q.answers));assert(!E.answerMatches('banana',q.answers));});
 test('Backups reject malformed state and protect recovery',()=>{const s=E.defaultState();assert(E.validateState(s));for(const change of [x=>x.plans={bad:4},x=>x.answers={bad:{chunks:'oops'}},x=>x.timer.minutes=0,x=>x.timer.running=true,x=>x.settings.unit=null,x=>x.visited={draft:1},x=>x.drafts={bad:{text:'x',versions:[],review:{},independent:false}}]){const x=JSON.parse(JSON.stringify(s));change(x);assert.equal(E.validateState(x),false);}assert(!E.validateState(JSON.parse('{"schema":3,"__proto__":{}}')));const valid=E.defaultState();const a=E.analyseWriting(cases.developed,'essay','','');valid.drafts.task={text:cases.developed,versions:[{text:cases.developed,date:Date.now(),analysis:a}],review:{focus:'My reflection'},independent:false,updatedAt:Date.now(),feedback:a};assert(E.validateState(valid));});
+
+test('Every covered unit has active writing tasks; all reference prompts survive',()=>{
+ const genres=Object.values(D.genres),prompts=genres.flatMap(g=>g.prompts);
+ assert.equal(prompts.length,52);assert.equal(new Set(prompts.map(p=>p.id)).size,52);
+ for(const unit of D.units)assert.ok(genres.some(g=>g.unitId===unit.id&&g.prompts.length),unit.id);
+ for(const task of [...D.referenceTasks,...D.legacyTasks])for(const prompt of task.prompts)assert.ok(prompts.some(p=>p.text===prompt),prompt);
+ for(const genre of Object.keys(D.genres)){const state=E.defaultState();state.settings.genre=genre;assert.equal(E.validateState(state),true,genre);}
+});
+test('Informal letter feedback accepts contractions and uses genre criteria',()=>{
+ const text="Hi Linh! I'm feeling better now. I can't wait to see you. Students helps at the clinic.";
+ const letter=E.analyseWriting(text,'letter','recovery','Write to a friend about recovery');
+ assert.ok(!letter.priorities.some(p=>p.id==='register'));
+ assert.ok(letter.priorities.some(p=>p.id==='grammar'));
+ assert.ok(letter.priorities.every(p=>p.criterion.startsWith('Genre self-review')));
+ assert.ok(letter.checks.every(p=>!p.question.includes('admirable quality')));
+ assert.ok(E.analyseWriting(text,'essay','','').priorities.some(p=>p.id==='register'));
+});

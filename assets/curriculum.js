@@ -2613,7 +2613,7 @@ window.STUDIO_DATA = {
       "prompts": [
         {
           "id": "essay-choice",
-          "text": "Should volunteering be compulsory for all school students? Give your position and support it with developed reasons and relevant examples."
+          "text": "\"Should volunteering be a compulsory requirement for all school students?\""
         },
         {
           "id": "essay-benefits",
@@ -2622,6 +2622,26 @@ window.STUDIO_DATA = {
         {
           "id": "essay-time",
           "text": "Schools should provide time for volunteering during the school day. To what extent do you agree?"
+        },
+        {
+          "id": "essay-reference-2",
+          "text": "\"How do charitable organisations make communities stronger?\""
+        },
+        {
+          "id": "essay-reference-3",
+          "text": "\"Non-profit organisations are the most effective way to tackle social problems.\" Do you agree?"
+        },
+        {
+          "id": "essay-reference-4",
+          "text": "\"The government should provide more funding to non-profit organisations.\" Do you agree?"
+        },
+        {
+          "id": "essay-reference-5",
+          "text": "\"Volunteering abroad does more harm than good.\" To what extent do you agree?"
+        },
+        {
+          "id": "essay-reference-6",
+          "text": "\"Large corporations are more effective at solving social problems than charities.\" Discuss."
         }
       ],
       "criteria": [
@@ -2641,7 +2661,26 @@ window.STUDIO_DATA = {
       "model": {
         "weak": "Volunteering is good. It helps people. Students learn things. Therefore, it should be compulsory.",
         "strong": "Schools should offer regular volunteering opportunities while allowing students to choose a suitable role. Choice helps students participate with genuine interest rather than simply completing a requirement. For example, in a hypothetical reading project, a student who enjoys books could help younger pupils practise reading. Explaining unfamiliar words would require patience and attention to each pupil’s needs. This shows how a well-chosen role can develop responsibility while providing useful support, strengthening the case for accessible volunteering with student choice."
-      }
+      },
+      "unitId": "u2",
+      "wordRange": "200–250 words",
+      "structure": [
+        "Introduction — hook + thesis statement",
+        "Body Paragraph 1 — point + example",
+        "Body Paragraph 2 — point + example",
+        "Counter-argument (optional)",
+        "Conclusion — restate + final thought"
+      ],
+      "register": "formal",
+      "checklist": [
+        "My purpose and audience are clear.",
+        "Each main idea has specific, relevant support.",
+        "I explain what my examples demonstrate.",
+        "Paragraphs or sections have distinct functions and connect to the central focus.",
+        "My language and register suit this genre and audience.",
+        "I check facts, grammar, spelling and references.",
+        "I have revised a priority issue and explained my change."
+      ]
     },
     "biography": {
       "name": "Biographical article",
@@ -2677,7 +2716,1265 @@ window.STUDIO_DATA = {
       "model": {
         "weak": "Maya is a good person. She worked hard. She opened a club. She is very inspiring.",
         "strong": "Maya, a fictional student used in this practice example, is admirable for her perseverance in creating a reading club. Before she opened the club, she had collected books from families in her neighbourhood. By the time the first meeting took place, she had been preparing activities for two months. When only three pupils attended, she asked them which stories interested them and changed the activities. Her response demonstrates perseverance because she treated a setback as a reason to improve rather than to stop. The club’s development illustrates how steady effort can turn a small idea into useful support."
-      }
+      },
+      "unitId": "u1",
+      "register": "formal",
+      "wordRange": "200–250 words",
+      "checklist": [
+        "My purpose and audience are clear.",
+        "Each main idea has specific, relevant support.",
+        "I explain what my examples demonstrate.",
+        "Paragraphs or sections have distinct functions and connect to the central focus.",
+        "My language and register suit this genre and audience.",
+        "I check facts, grammar, spelling and references.",
+        "I have revised a priority issue and explained my change."
+      ]
+    },
+    "blog": {
+      "name": "Blog Entry",
+      "unit": "Unit 3 — Famous People & Adventures",
+      "unitId": "u3",
+      "purpose": "Share an engaging account with readers of a school blog. Connect specific experiences to your central message.",
+      "focusLabel": "Central message / significance",
+      "standards": "Genre self-review · supplied UO mapping not available",
+      "register": "semi-formal",
+      "prompts": [
+        {
+          "id": "blog-reference-1",
+          "text": "Write a blog entry describing the life, qualities, and impact of a famous or inspirational person you admire."
+        },
+        {
+          "id": "blog-reference-2",
+          "text": "Describe the most incredible adventure or achievement in history and explain what made it remarkable."
+        },
+        {
+          "id": "blog-reference-3",
+          "text": "Write a blog entry about a local hero or community figure who has made a difference, and explain what others can learn from their example."
+        },
+        {
+          "id": "blog-reference-4",
+          "text": "Write a blog entry about an extreme sport or physical challenge you would love to attempt, explaining its appeal and the risks involved."
+        },
+        {
+          "id": "blog-reference-5",
+          "text": "Write a blog entry about a historical figure whose story deserves to be better known, and explain why their legacy still matters today."
+        }
+      ],
+      "frames": [
+        "My central message is …",
+        "A specific example is …",
+        "This matters because …",
+        "This connects to my purpose because …"
+      ],
+      "model": {
+        "weak": "A journey can teach us something. It is interesting.",
+        "strong": "A challenging journey can reveal the value of preparation. In a hypothetical school expedition, a group checks its route and carries spare water before setting out. When a path closes, the group can choose a safe alternative instead of guessing. This example shows why preparation matters: it gives people options when circumstances change."
+      },
+      "structure": [
+        "Catchy Title / Headline",
+        "Hook — surprising fact, quote, or question",
+        "Background — who they are, where from",
+        "Qualities & Evidence — 2–3 key traits",
+        "Impact / Legacy — why they matter",
+        "Conclusion — personal reflection"
+      ],
+      "wordRange": "200–250 words",
+      "checklist": [
+        "My purpose and audience are clear.",
+        "Each main idea has specific, relevant support.",
+        "I explain what my examples demonstrate.",
+        "Paragraphs or sections have distinct functions and connect to the central focus.",
+        "My language and register suit this genre and audience.",
+        "I check facts, grammar, spelling and references.",
+        "I have revised a priority issue and explained my change."
+      ]
+    },
+    "letter": {
+      "name": "Informal Letter",
+      "unit": "Unit 4 — Medical Care",
+      "unitId": "u4",
+      "purpose": "Write to a friend about a medical experience or innovation. Explain events, feelings and why they matter to your reader.",
+      "focusLabel": "Main message for your friend",
+      "standards": "Genre self-review · supplied UO mapping not available",
+      "register": "informal",
+      "prompts": [
+        {
+          "id": "letter-reference-1",
+          "text": "Write a letter to a friend telling them about a medical experience you or someone you know had, and the treatment or recovery process."
+        },
+        {
+          "id": "letter-reference-2",
+          "text": "Write a letter to a friend explaining an exciting medical innovation (e.g. telemedicine, vaccines) and how it has changed people's lives."
+        },
+        {
+          "id": "letter-reference-3",
+          "text": "Write a letter to a friend telling them about a hospital visit or surgery experience and how it changed your perspective on healthcare."
+        },
+        {
+          "id": "letter-reference-4",
+          "text": "Write a letter to a friend advising them on how to stay healthy and avoid getting ill, based on something you recently learned."
+        },
+        {
+          "id": "letter-reference-5",
+          "text": "Write a letter to a friend describing a traditional or alternative medicine practice you have read about and sharing your honest opinion of it."
+        }
+      ],
+      "frames": [
+        "My central message is …",
+        "A specific example is …",
+        "This matters because …",
+        "This connects to my purpose because …"
+      ],
+      "model": {
+        "weak": "Hi Sam, I went to a clinic. It was good. Bye.",
+        "strong": "Hi Sam,\n\nYou asked how my clinic visit went. In this fictional account, the nurse explained each step before the appointment, which helped me feel less nervous. For example, knowing when I could ask questions made it easier to describe my concerns. That clear explanation mattered because I could take part in the conversation rather than stay silent. How have you been?\n\nBest wishes,\nAlex"
+      },
+      "structure": [
+        "Greeting: Hey [Name]! / Hi [Name],",
+        "Opening: Refer to last contact + reason for writing",
+        "Body 1: Describe the medical situation or innovation",
+        "Body 2: Explain the impact, your feelings, or what happened",
+        "Closing: Wish + question to them",
+        "Sign-off: Lots of love, / See you soon!"
+      ],
+      "wordRange": "180–220 words",
+      "checklist": [
+        "I use an appropriate greeting, opening and friendly sign-off.",
+        "My purpose and audience are clear.",
+        "Each main idea has specific, relevant support.",
+        "I explain what my examples demonstrate.",
+        "Paragraphs or sections have distinct functions and connect to the central focus.",
+        "My language and register suit this genre and audience.",
+        "I check facts, grammar, spelling and references.",
+        "I have revised a priority issue and explained my change."
+      ]
+    },
+    "healthEssay": {
+      "name": "Opinion Essay",
+      "unit": "Unit 5 — Healthy Lifestyles",
+      "unitId": "u5",
+      "purpose": "Develop a position about healthy lifestyles using relevant reasons and examples. Qualify claims and verify health information.",
+      "focusLabel": "Thesis / position",
+      "standards": "Genre self-review · supplied UO mapping not available",
+      "register": "formal",
+      "prompts": [
+        {
+          "id": "healthEssay-reference-1",
+          "text": "\"Exercise is more important than diet for maintaining good health.\" Do you agree?"
+        },
+        {
+          "id": "healthEssay-reference-2",
+          "text": "Write an essay arguing whether technology is helping or harming people's health."
+        },
+        {
+          "id": "healthEssay-reference-3",
+          "text": "\"Young people today have unhealthier lifestyles than previous generations.\" Do you agree?"
+        },
+        {
+          "id": "healthEssay-reference-4",
+          "text": "\"Fast food restaurants should be banned near schools.\" Do you agree?"
+        },
+        {
+          "id": "healthEssay-reference-5",
+          "text": "\"Mental health education is just as important as physical education in schools.\" To what extent do you agree?"
+        },
+        {
+          "id": "healthEssay-reference-6",
+          "text": "\"Governments should introduce a tax on unhealthy food and drinks to encourage better lifestyle choices.\" Discuss."
+        }
+      ],
+      "frames": [
+        "My central message is …",
+        "A specific example is …",
+        "This matters because …",
+        "This connects to my purpose because …"
+      ],
+      "model": {
+        "weak": "Exercise matters. It is good for everyone.",
+        "strong": "A healthy routine should fit a person’s circumstances rather than depend on one activity. For example, in a hypothetical school schedule, a student might choose a short walk during a break instead of an activity they cannot access. A practical choice is easier to incorporate into the day. This illustrates why accessibility matters when discussing healthy routines; it does not prove a medical benefit for every person."
+      },
+      "structure": [
+        "Introduction — state your opinion clearly as a thesis",
+        "Argument 1 — reason + example or evidence",
+        "Argument 2 — reason + example or evidence",
+        "Argument 3 or counter-argument (optional)",
+        "Conclusion — restate opinion in different words"
+      ],
+      "wordRange": "150–200 words",
+      "checklist": [
+        "My purpose and audience are clear.",
+        "Each main idea has specific, relevant support.",
+        "I explain what my examples demonstrate.",
+        "Paragraphs or sections have distinct functions and connect to the central focus.",
+        "My language and register suit this genre and audience.",
+        "I check facts, grammar, spelling and references.",
+        "I have revised a priority issue and explained my change."
+      ]
+    },
+    "report": {
+      "name": "Formal Report",
+      "unit": "Unit 9 — The Environment",
+      "unitId": "u9",
+      "purpose": "Inform a defined audience about an environmental problem, organise findings and justify practical recommendations.",
+      "focusLabel": "Report purpose / main finding",
+      "standards": "Genre self-review · supplied UO mapping not available",
+      "register": "formal",
+      "prompts": [
+        {
+          "id": "report-reference-1",
+          "text": "Write a report on the main causes and effects of air pollution in your city or country."
+        },
+        {
+          "id": "report-reference-2",
+          "text": "Write a report on the water shortage crisis — causes, effects, and possible solutions."
+        },
+        {
+          "id": "report-reference-3",
+          "text": "Write a report on how deforestation is affecting biodiversity around the world."
+        },
+        {
+          "id": "report-reference-4",
+          "text": "Write a report on the causes and effects of plastic pollution in the ocean and suggest practical solutions."
+        },
+        {
+          "id": "report-reference-5",
+          "text": "Write a report on how climate change is affecting global weather patterns and threatening food security."
+        },
+        {
+          "id": "report-reference-6",
+          "text": "Write a report on the impact of urbanisation on natural habitats and recommend steps to protect endangered species."
+        }
+      ],
+      "frames": [
+        "My central message is …",
+        "A specific example is …",
+        "This matters because …",
+        "This connects to my purpose because …"
+      ],
+      "model": {
+        "weak": "Pollution is bad. We should fix it.",
+        "strong": "Report on litter near the school\n\nPurpose\nThis hypothetical report considers how litter could be reduced near an entrance.\n\nFindings\nA fictional observation identifies wrappers beside the gate after lunch. The location suggests that convenient disposal points could be examined, although one observation cannot establish the whole cause.\n\nRecommendation\nThe school could trial a clearly labelled bin near the entrance and compare subsequent observations. This connects the suggested action to the reported location while recognising the evidence’s limits."
+      },
+      "structure": [
+        "Title: 'Report on [Topic]'",
+        "Introduction — state purpose: 'This report aims to…'",
+        "Causes / Background (heading)",
+        "Effects / Findings (heading)",
+        "Recommendations (heading)",
+        "Conclusion — summary + call to action"
+      ],
+      "wordRange": "200–250 words",
+      "checklist": [
+        "My headings help readers find the information they need.",
+        "My purpose and audience are clear.",
+        "Each main idea has specific, relevant support.",
+        "I explain what my examples demonstrate.",
+        "Paragraphs or sections have distinct functions and connect to the central focus.",
+        "My language and register suit this genre and audience.",
+        "I check facts, grammar, spelling and references.",
+        "I have revised a priority issue and explained my change."
+      ]
+    },
+    "article": {
+      "name": "Magazine Article",
+      "unit": "Unit 11 — Fashion & Lifestyle",
+      "unitId": "u11",
+      "purpose": "Engage magazine readers with a clear angle about fashion or lifestyle. Explain examples and their significance.",
+      "focusLabel": "Article angle / central message",
+      "standards": "Genre self-review · supplied UO mapping not available",
+      "register": "semi-formal",
+      "prompts": [
+        {
+          "id": "article-reference-1",
+          "text": "Write a magazine article about the impact of fast fashion on the environment and society."
+        },
+        {
+          "id": "article-reference-2",
+          "text": "Write a newspaper article about how fashion shapes identity and cultural expression."
+        },
+        {
+          "id": "article-reference-3",
+          "text": "Write an article arguing that sustainable fashion should replace fast fashion completely."
+        },
+        {
+          "id": "article-reference-4",
+          "text": "Write a magazine article about how social media is changing young people's attitudes towards fashion and body image."
+        },
+        {
+          "id": "article-reference-5",
+          "text": "Write an article exploring whether traditional cultural dress should be preserved or modernised for the 21st century."
+        },
+        {
+          "id": "article-reference-6",
+          "text": "Write a magazine article about the rise of vintage and second-hand fashion — is it a genuine environmental movement or just a trend?"
+        }
+      ],
+      "frames": [
+        "My central message is …",
+        "A specific example is …",
+        "This matters because …",
+        "This connects to my purpose because …"
+      ],
+      "model": {
+        "weak": "Fashion changes. Clothes are interesting.",
+        "strong": "A second life for a jacket\n\nCould a small repair change how we value our clothes? In a hypothetical school exchange, a student repairs a loose seam before passing a jacket to another learner. The repair gives the garment a further use rather than treating a minor fault as its end. This example illustrates one practical way to extend clothing use, while wider environmental claims still need reliable evidence."
+      },
+      "structure": [
+        "Catchy Title — bold, informative, attention-grabbing",
+        "Hook / Opening — startling statistic, question, or bold statement",
+        "Preview sentence: 'This article explores…'",
+        "Body Paragraph 1 — first main point + evidence",
+        "Body Paragraph 2 — second main point + evidence",
+        "Conclusion — thought-provoking final statement"
+      ],
+      "wordRange": "150–200 words",
+      "checklist": [
+        "My purpose and audience are clear.",
+        "Each main idea has specific, relevant support.",
+        "I explain what my examples demonstrate.",
+        "Paragraphs or sections have distinct functions and connect to the central focus.",
+        "My language and register suit this genre and audience.",
+        "I check facts, grammar, spelling and references.",
+        "I have revised a priority issue and explained my change."
+      ]
+    },
+    "foodReport": {
+      "name": "Food Production Report",
+      "unit": "Unit 10 — Feeding the World",
+      "unitId": "u10",
+      "purpose": "Explain a food-production issue, evaluate evidence and justify recommendations for a defined audience.",
+      "focusLabel": "Report purpose / main finding",
+      "standards": "Genre self-review · supplied UO mapping not available",
+      "register": "formal",
+      "prompts": [
+        {
+          "id": "foodReport-reference-1",
+          "text": "Write a report on the main challenges facing global food production and suggest solutions to ensure food security for future generations."
+        },
+        {
+          "id": "foodReport-reference-2",
+          "text": "Write a report on how modern farming techniques such as vertical farming and GMOs are changing food production around the world."
+        },
+        {
+          "id": "foodReport-reference-3",
+          "text": "Write a report on the causes and effects of food waste globally and recommend strategies to reduce it."
+        },
+        {
+          "id": "foodReport-reference-4",
+          "text": "Write a report on how climate change is threatening agricultural systems and what governments and farmers can do to adapt."
+        },
+        {
+          "id": "foodReport-reference-5",
+          "text": "Write a report on the impact of overfishing on marine ecosystems and suggest sustainable alternatives."
+        },
+        {
+          "id": "foodReport-reference-6",
+          "text": "Write a report on whether organic farming can realistically feed the world's growing population."
+        }
+      ],
+      "frames": [
+        "My central message is …",
+        "A specific example is …",
+        "This matters because …",
+        "This connects to my purpose because …"
+      ],
+      "model": {
+        "weak": "Food waste is bad. Farms need changes.",
+        "strong": "Report on a food-waste trial\n\nPurpose\nThis hypothetical report proposes a way to examine waste in a school canteen.\n\nProposed finding method\nStaff could record which meals leave the most uneaten food. Separating observations by meal would help distinguish a general problem from a specific unpopular option.\n\nRecommendation\nThe canteen could use those observations to trial smaller initial portions with optional seconds. The recommendation follows from the proposed evidence, but its effect should be checked rather than assumed."
+      },
+      "structure": [
+        "Title: 'Report on [Topic]'",
+        "Introduction — state purpose: 'This report aims to…'",
+        "Background / Causes (heading)",
+        "Effects / Findings (heading)",
+        "Recommendations (heading)",
+        "Conclusion — summary + call to action"
+      ],
+      "wordRange": "200–250 words",
+      "checklist": [
+        "My headings help readers find the information they need.",
+        "My purpose and audience are clear.",
+        "Each main idea has specific, relevant support.",
+        "I explain what my examples demonstrate.",
+        "Paragraphs or sections have distinct functions and connect to the central focus.",
+        "My language and register suit this genre and audience.",
+        "I check facts, grammar, spelling and references.",
+        "I have revised a priority issue and explained my change."
+      ]
+    },
+    "comparison": {
+      "name": "Comparison project",
+      "unit": "Unit 8 · Animals & the Natural World",
+      "unitId": "u8",
+      "purpose": "Write a comparison project for a clear audience. Develop examples and explain how they support the central focus.",
+      "focusLabel": "Central focus / purpose",
+      "standards": "Genre self-review · supplied UO mapping not available",
+      "register": "semi-formal",
+      "wordRange": "200–250 words (practice suggestion)",
+      "prompts": [
+        {
+          "id": "comparison-task-1",
+          "text": "Compare two animals or habitats. Explain similarities and differences using relevant, verified examples."
+        },
+        {
+          "id": "comparison-task-2",
+          "text": "Compare two approaches to protecting endangered species. Explain their strengths, limits and suitability."
+        }
+      ],
+      "frames": [
+        "The purpose is …",
+        "For example, …",
+        "This example matters because …",
+        "This connects to the focus because …"
+      ],
+      "structure": [
+        "Introduce the comparison and purpose",
+        "Compare using consistent dimensions",
+        "Explain specific similarities and differences",
+        "Conclude with a supported judgement"
+      ],
+      "model": {
+        "weak": "This topic matters. There are benefits. We should think about it.",
+        "strong": "The central message needs a concrete example that readers can examine. In a hypothetical school project, organisers ask participants which activity they can access before choosing a schedule. That specific action helps connect the plan to the audience’s circumstances. Explaining this connection makes the example useful rather than leaving it as an isolated detail. Adapt the content and organisation to your selected genre."
+      },
+      "checklist": [
+        "My purpose and audience are clear.",
+        "Each main idea has specific, relevant support.",
+        "I explain what my examples demonstrate.",
+        "Paragraphs or sections have distinct functions and connect to the central focus.",
+        "My language and register suit this genre and audience.",
+        "I check facts, grammar, spelling and references.",
+        "I have revised a priority issue and explained my change."
+      ]
+    },
+    "presentation": {
+      "name": "Presentation script",
+      "unit": "Unit 10 · Food Production",
+      "unitId": "u10",
+      "purpose": "Write a presentation script for a clear audience. Develop examples and explain how they support the central focus.",
+      "focusLabel": "Central focus / purpose",
+      "standards": "Genre self-review · supplied UO mapping not available",
+      "register": "semi-formal",
+      "wordRange": "200–250 words (practice suggestion)",
+      "prompts": [
+        {
+          "id": "presentation-task-1",
+          "text": "Prepare a presentation explaining one food-production challenge and a justified possible solution."
+        },
+        {
+          "id": "presentation-task-2",
+          "text": "Prepare a presentation comparing local food production with imported food. Support your central message with examples."
+        }
+      ],
+      "frames": [
+        "The purpose is …",
+        "For example, …",
+        "This example matters because …",
+        "This connects to the focus because …"
+      ],
+      "structure": [
+        "Introduce the central message",
+        "Develop two or three points with examples",
+        "Signpost transitions for listeners",
+        "Conclude and invite questions"
+      ],
+      "model": {
+        "weak": "This topic matters. There are benefits. We should think about it.",
+        "strong": "The central message needs a concrete example that readers can examine. In a hypothetical school project, organisers ask participants which activity they can access before choosing a schedule. That specific action helps connect the plan to the audience’s circumstances. Explaining this connection makes the example useful rather than leaving it as an isolated detail. Adapt the content and organisation to your selected genre."
+      },
+      "checklist": [
+        "My purpose and audience are clear.",
+        "Each main idea has specific, relevant support.",
+        "I explain what my examples demonstrate.",
+        "Paragraphs or sections have distinct functions and connect to the central focus.",
+        "My language and register suit this genre and audience.",
+        "I check facts, grammar, spelling and references.",
+        "I have revised a priority issue and explained my change."
+      ]
+    },
+    "discussion": {
+      "name": "Discussion / talk",
+      "unit": "Unit 12 · Future Technologies",
+      "unitId": "u12",
+      "purpose": "Write a discussion / talk for a clear audience. Develop examples and explain how they support the central focus.",
+      "focusLabel": "Central focus / purpose",
+      "standards": "Genre self-review · supplied UO mapping not available",
+      "register": "semi-formal",
+      "wordRange": "200–250 words (practice suggestion)",
+      "prompts": [
+        {
+          "id": "discussion-task-1",
+          "text": "Prepare a balanced discussion of the benefits and risks of one future technology. Develop examples and a reasoned final view."
+        },
+        {
+          "id": "discussion-task-2",
+          "text": "Prepare a talk about how an emerging technology could affect daily life. Distinguish possibilities from established facts."
+        }
+      ],
+      "frames": [
+        "The purpose is …",
+        "For example, …",
+        "This example matters because …",
+        "This connects to the focus because …"
+      ],
+      "structure": [
+        "Introduce the issue",
+        "Develop different perspectives fairly",
+        "Explain examples and limitations",
+        "Give a supported final view"
+      ],
+      "model": {
+        "weak": "This topic matters. There are benefits. We should think about it.",
+        "strong": "The central message needs a concrete example that readers can examine. In a hypothetical school project, organisers ask participants which activity they can access before choosing a schedule. That specific action helps connect the plan to the audience’s circumstances. Explaining this connection makes the example useful rather than leaving it as an isolated detail. Adapt the content and organisation to your selected genre."
+      },
+      "checklist": [
+        "My purpose and audience are clear.",
+        "Each main idea has specific, relevant support.",
+        "I explain what my examples demonstrate.",
+        "Paragraphs or sections have distinct functions and connect to the central focus.",
+        "My language and register suit this genre and audience.",
+        "I check facts, grammar, spelling and references.",
+        "I have revised a priority issue and explained my change."
+      ]
+    },
+    "webpage": {
+      "name": "Volunteering webpage",
+      "unit": "Unit 2 · Organizations & Volunteering",
+      "unitId": "u2",
+      "purpose": "Write a volunteering webpage for a clear audience. Develop examples and explain how they support the central focus.",
+      "focusLabel": "Central focus / purpose",
+      "standards": "UO 2.h · webpage text component",
+      "register": "formal",
+      "wordRange": "200–250 words (practice suggestion)",
+      "prompts": [
+        {
+          "id": "webpage-task-1",
+          "text": "Draft the text for a volunteer organisation’s webpage: purpose, activities, who can join and a clear call to action."
+        },
+        {
+          "id": "webpage-task-2",
+          "text": "Draft a webpage explaining a school volunteering initiative. Include informative headings and practical participation details."
+        }
+      ],
+      "frames": [
+        "The purpose is …",
+        "For example, …",
+        "This example matters because …",
+        "This connects to the focus because …"
+      ],
+      "structure": [
+        "Informative title and mission",
+        "Activities and their relevance",
+        "Who can join and practical details",
+        "Clear call to action and proposed navigation"
+      ],
+      "model": {
+        "weak": "This topic matters. There are benefits. We should think about it.",
+        "strong": "The central message needs a concrete example that readers can examine. In a hypothetical school project, organisers ask participants which activity they can access before choosing a schedule. That specific action helps connect the plan to the audience’s circumstances. Explaining this connection makes the example useful rather than leaving it as an isolated detail. Adapt the content and organisation to your selected genre."
+      },
+      "checklist": [
+        "My headings help readers find the information they need.",
+        "My purpose and audience are clear.",
+        "Each main idea has specific, relevant support.",
+        "I explain what my examples demonstrate.",
+        "Paragraphs or sections have distinct functions and connect to the central focus.",
+        "My language and register suit this genre and audience.",
+        "I check facts, grammar, spelling and references.",
+        "I have revised a priority issue and explained my change."
+      ]
     }
-  }
+  },
+  "referenceLinkers": {
+    "adding": [
+      {
+        "w": "In addition (to this)",
+        "f": "Adding information",
+        "e": "In addition to being affordable, the product is eco-friendly."
+      },
+      {
+        "w": "Furthermore",
+        "f": "Stronger addition",
+        "e": "Furthermore, volunteering improves mental wellbeing."
+      },
+      {
+        "w": "Moreover",
+        "f": "Stronger addition",
+        "e": "Moreover, the research suggests significant benefits."
+      },
+      {
+        "w": "As well as",
+        "f": "Alongside",
+        "e": "As well as reducing waste, electric cars lower emissions."
+      },
+      {
+        "w": "Not only… but also",
+        "f": "Emphatic addition",
+        "e": "Not only did she recover fully, but she also inspired others."
+      },
+      {
+        "w": "Besides",
+        "f": "In addition to",
+        "e": "Besides being tasty, the meal was highly nutritious."
+      },
+      {
+        "w": "In addition to this",
+        "f": "Adding point",
+        "e": "In addition to this, the company donates to local charities."
+      },
+      {
+        "w": "What is more",
+        "f": "Furthermore",
+        "e": "What is more, the report highlights three key solutions."
+      }
+    ],
+    "contrasting": [
+      {
+        "w": "However",
+        "f": "Direct contrast",
+        "e": "Diet is important. However, exercise is equally vital."
+      },
+      {
+        "w": "On the other hand",
+        "f": "Opposing view",
+        "e": "Fast fashion is cheap. On the other hand, it harms the environment."
+      },
+      {
+        "w": "Although",
+        "f": "Concession clause",
+        "e": "Although she was nervous, she performed brilliantly."
+      },
+      {
+        "w": "Even though",
+        "f": "Strong concession",
+        "e": "Even though the task was difficult, he completed it."
+      },
+      {
+        "w": "Nevertheless",
+        "f": "Despite this",
+        "e": "The project was challenging. Nevertheless, the team succeeded."
+      },
+      {
+        "w": "Whereas",
+        "f": "Simultaneous contrast",
+        "e": "Lions are social, whereas tigers are solitary."
+      },
+      {
+        "w": "In contrast",
+        "f": "Showing difference",
+        "e": "Rich nations produce more waste. In contrast, poorer nations use less."
+      },
+      {
+        "w": "Despite",
+        "f": "In spite of",
+        "e": "Despite the difficulties, she achieved her goals."
+      }
+    ],
+    "cause": [
+      {
+        "w": "Because",
+        "f": "Introduces cause",
+        "e": "She improved because she practised every day."
+      },
+      {
+        "w": "Since",
+        "f": "Because / as",
+        "e": "Since the factory closed, unemployment has risen."
+      },
+      {
+        "w": "Therefore",
+        "f": "As a result",
+        "e": "Deforestation increases CO₂. Therefore, temperatures rise."
+      },
+      {
+        "w": "As a result",
+        "f": "Consequence",
+        "e": "He ate poorly. As a result, his health worsened."
+      },
+      {
+        "w": "Consequently",
+        "f": "As a consequence",
+        "e": "Consequently, the entire ecosystem was affected."
+      },
+      {
+        "w": "Due to",
+        "f": "Because of",
+        "e": "Due to heavy rainfall, the event was cancelled."
+      },
+      {
+        "w": "This leads to",
+        "f": "Chain of cause-effect",
+        "e": "Poor nutrition leads to a weakened immune system."
+      },
+      {
+        "w": "Owing to",
+        "f": "Because of (formal)",
+        "e": "Owing to the drought, crops failed across the region."
+      }
+    ],
+    "sequencing": [
+      {
+        "w": "Firstly",
+        "f": "First point",
+        "e": "Firstly, gather the ingredients."
+      },
+      {
+        "w": "Secondly",
+        "f": "Second point",
+        "e": "Secondly, mix them until smooth."
+      },
+      {
+        "w": "Finally",
+        "f": "Last point",
+        "e": "Finally, bake the mixture for 30 minutes."
+      },
+      {
+        "w": "To begin with",
+        "f": "Opening",
+        "e": "To begin with, the volunteers cleaned the area."
+      },
+      {
+        "w": "Subsequently",
+        "f": "Afterwards",
+        "e": "She trained for months. Subsequently, she won the race."
+      },
+      {
+        "w": "In conclusion",
+        "f": "Wrapping up",
+        "e": "In conclusion, healthy habits extend life expectancy."
+      },
+      {
+        "w": "To summarise",
+        "f": "Summary",
+        "e": "To summarise, three key solutions were identified."
+      },
+      {
+        "w": "Overall",
+        "f": "Final reflection",
+        "e": "Overall, technology has improved quality of life."
+      }
+    ],
+    "examples": [
+      {
+        "w": "For example",
+        "f": "Specific illustration",
+        "e": "Many diseases are preventable. For example, vaccines stop measles."
+      },
+      {
+        "w": "For instance",
+        "f": "Specific case",
+        "e": "Sustainable choices, for instance buying local, reduce emissions."
+      },
+      {
+        "w": "Such as",
+        "f": "Giving items",
+        "e": "Foods such as fruit and vegetables provide vitamins."
+      },
+      {
+        "w": "Including",
+        "f": "Listing examples",
+        "e": "Many animals, including tigers and elephants, are endangered."
+      },
+      {
+        "w": "In particular",
+        "f": "Specific focus",
+        "e": "She admired many leaders, Nelson Mandela in particular."
+      },
+      {
+        "w": "To illustrate",
+        "f": "To show clearly",
+        "e": "To illustrate, cities with better transport have lower emissions."
+      },
+      {
+        "w": "Specifically",
+        "f": "Precisely",
+        "e": "Specifically, the report focuses on three main causes."
+      }
+    ],
+    "opinion": [
+      {
+        "w": "In my opinion",
+        "f": "Personal view",
+        "e": "In my opinion, volunteering should be compulsory."
+      },
+      {
+        "w": "In my view",
+        "f": "Personal view",
+        "e": "In my view, fast fashion is fundamentally unethical."
+      },
+      {
+        "w": "I strongly argue",
+        "f": "Strong position",
+        "e": "I strongly argue that environmental education must begin early."
+      },
+      {
+        "w": "It is clear that",
+        "f": "Evident claim",
+        "e": "It is clear that mental health affects academic performance."
+      },
+      {
+        "w": "It could be argued",
+        "f": "Distanced view",
+        "e": "It could be argued that technology brings more risks than benefits."
+      },
+      {
+        "w": "From my perspective",
+        "f": "Personal standpoint",
+        "e": "From my perspective, technology brings more benefits than risks."
+      },
+      {
+        "w": "I believe that",
+        "f": "Personal belief",
+        "e": "I believe that the government must take decisive action."
+      },
+      {
+        "w": "Evidence suggests",
+        "f": "Evidence-based claim",
+        "e": "Evidence suggests that sleep affects academic performance."
+      }
+    ],
+    "reference": [
+      {
+        "w": "this / these",
+        "e": "\"Fast fashion is harmful. This is why we must rethink our habits.\""
+      },
+      {
+        "w": "that / those",
+        "e": "\"Some charities are underfunded. Those that receive grants are more effective.\""
+      },
+      {
+        "w": "it / they / them",
+        "e": "\"Animals are endangered. They need our protection.\""
+      },
+      {
+        "w": "such (+ noun)",
+        "e": "\"Pollution is rising. Such trends threaten ecosystems.\""
+      },
+      {
+        "w": "the former / latter",
+        "e": "\"Diet and exercise both matter. The former provides fuel; the latter burns it.\""
+      },
+      {
+        "w": "one / ones",
+        "e": "\"She chose a healthy meal rather than an unhealthy one.\""
+      },
+      {
+        "w": "here / there",
+        "e": "\"Scientists work in labs. There they conduct experiments.\""
+      },
+      {
+        "w": "the same",
+        "e": "\"Both countries face the same environmental challenges.\""
+      }
+    ],
+    "structures": [
+      {
+        "w": "Relative clause (defining)",
+        "f": "Who / which / that",
+        "e": "The doctor who treated me was highly experienced."
+      },
+      {
+        "w": "Relative clause (non-defining)",
+        "f": "Adds extra info",
+        "e": "Dr Pham, who works at City Hospital, pioneered the technique."
+      },
+      {
+        "w": "Conditional (1st)",
+        "f": "Real possibility",
+        "e": "If we reduce waste, the environment will benefit."
+      },
+      {
+        "w": "Conditional (2nd)",
+        "f": "Hypothetical",
+        "e": "If everyone recycled, there would be less pollution."
+      },
+      {
+        "w": "Conditional (3rd)",
+        "f": "Past regret",
+        "e": "If we had acted sooner, the damage could have been prevented."
+      },
+      {
+        "w": "Passive voice",
+        "f": "Impersonal/formal",
+        "e": "Thousands of animals are threatened by deforestation each year."
+      },
+      {
+        "w": "Future in the past",
+        "f": "Reported speech",
+        "e": "She told me she would start volunteering the next month."
+      },
+      {
+        "w": "Participle clause",
+        "f": "Concise combining",
+        "e": "Having finished her draft, she began the peer review."
+      },
+      {
+        "w": "Concession clause",
+        "f": "Despite / although",
+        "e": "Although it is expensive, organic farming is more sustainable."
+      }
+    ]
+  },
+  "referenceTasks": [
+    {
+      "unit": "Unit 2 — Organizations & Volunteering",
+      "type": "Formal Essay",
+      "color": "#1A7F8E",
+      "len": "200–250 words",
+      "prompts": [
+        "\"Should volunteering be a compulsory requirement for all school students?\"",
+        "\"How do charitable organisations make communities stronger?\"",
+        "\"Non-profit organisations are the most effective way to tackle social problems.\" Do you agree?",
+        "\"The government should provide more funding to non-profit organisations.\" Do you agree?",
+        "\"Volunteering abroad does more harm than good.\" To what extent do you agree?",
+        "\"Large corporations are more effective at solving social problems than charities.\" Discuss."
+      ],
+      "structure": [
+        "Introduction — hook + thesis statement",
+        "Body Paragraph 1 — point + example",
+        "Body Paragraph 2 — point + example",
+        "Counter-argument (optional)",
+        "Conclusion — restate + final thought"
+      ],
+      "tips": [
+        "Start with a thought-provoking hook (statistic or question)",
+        "State your thesis clearly at the end of the introduction",
+        "Each body paragraph must have ONE main idea",
+        "Use at least 3 different linking devices",
+        "Use at least 1 relative clause",
+        "End with a strong conclusion — no new ideas"
+      ],
+      "dos": [
+        "Use formal vocabulary: demonstrate, indicate",
+        "Write 'do not', 'cannot' — NO contractions",
+        "Organise clearly with paragraph breaks",
+        "Support every point with evidence"
+      ],
+      "donts": [
+        "Use slang or casual expressions",
+        "Write 'I think' or 'I feel' in a neutral essay",
+        "Start sentences with And, But, or So",
+        "Repeat the same linking word many times"
+      ],
+      "checklist": [
+        "I have an introduction, body paragraphs, and conclusion",
+        "My thesis is clearly stated in the introduction",
+        "I used 3+ different linking devices",
+        "I used at least 1 relative clause",
+        "I maintained a formal register throughout",
+        "I did not use contractions",
+        "My conclusion does not introduce new ideas",
+        "I proofread my final draft"
+      ]
+    },
+    {
+      "unit": "Unit 3 — Famous People & Adventures",
+      "type": "Blog Entry",
+      "color": "#E07B39",
+      "len": "200–250 words",
+      "prompts": [
+        "Write a blog entry describing the life, qualities, and impact of a famous or inspirational person you admire.",
+        "Describe the most incredible adventure or achievement in history and explain what made it remarkable.",
+        "Write a blog entry about a local hero or community figure who has made a difference, and explain what others can learn from their example.",
+        "Write a blog entry about an extreme sport or physical challenge you would love to attempt, explaining its appeal and the risks involved.",
+        "Write a blog entry about a historical figure whose story deserves to be better known, and explain why their legacy still matters today."
+      ],
+      "structure": [
+        "Catchy Title / Headline",
+        "Hook — surprising fact, quote, or question",
+        "Background — who they are, where from",
+        "Qualities & Evidence — 2–3 key traits",
+        "Impact / Legacy — why they matter",
+        "Conclusion — personal reflection"
+      ],
+      "tips": [
+        "Begin with an engaging hook sentence",
+        "Use vivid descriptive adjectives: extraordinary, pioneering",
+        "Discourse markers: Firstly… Moreover… In conclusion…",
+        "Include at least 1 relative clause",
+        "Avoid slang — formal/semi-formal tone",
+        "End with a personal reflection"
+      ],
+      "dos": [
+        "Use vivid adjectives: extraordinary, courageous",
+        "Include at least 1 relative clause",
+        "Reference specific facts or events",
+        "Maintain a formal, respectful tone"
+      ],
+      "donts": [
+        "Write a list of facts without connecting them",
+        "Start every sentence with 'He' or 'She'",
+        "Use informal slang or abbreviations",
+        "Write only one unstructured paragraph"
+      ],
+      "checklist": [
+        "My title is catchy and informative",
+        "I started with an engaging hook",
+        "I described background, qualities, and impact",
+        "I used discourse markers: Firstly, Furthermore, In conclusion",
+        "I used at least 1 relative clause",
+        "I used vivid descriptive vocabulary",
+        "My conclusion includes a personal reflection",
+        "I maintained a formal tone throughout"
+      ]
+    },
+    {
+      "unit": "Unit 4 — Medical Care",
+      "type": "Informal Letter",
+      "color": "#2E7D32",
+      "len": "180–220 words",
+      "prompts": [
+        "Write a letter to a friend telling them about a medical experience you or someone you know had, and the treatment or recovery process.",
+        "Write a letter to a friend explaining an exciting medical innovation (e.g. telemedicine, vaccines) and how it has changed people's lives.",
+        "Write a letter to a friend telling them about a hospital visit or surgery experience and how it changed your perspective on healthcare.",
+        "Write a letter to a friend advising them on how to stay healthy and avoid getting ill, based on something you recently learned.",
+        "Write a letter to a friend describing a traditional or alternative medicine practice you have read about and sharing your honest opinion of it."
+      ],
+      "structure": [
+        "Greeting: Hey [Name]! / Hi [Name],",
+        "Opening: Refer to last contact + reason for writing",
+        "Body 1: Describe the medical situation or innovation",
+        "Body 2: Explain the impact, your feelings, or what happened",
+        "Closing: Wish + question to them",
+        "Sign-off: Lots of love, / See you soon!"
+      ],
+      "tips": [
+        "Use contractions naturally: I'm, it's, can't, didn't",
+        "Include personal pronouns: I, me, my, you, your",
+        "Use informal expressions: to be honest, you won't believe it",
+        "Include 4+ linking devices: because, although, in the end",
+        "Use at least 1 future-in-the-past sentence",
+        "Use 5+ medical vocabulary words"
+      ],
+      "dos": [
+        "Use contractions: I'm, it's, didn't",
+        "Use personal pronouns: I, you, my",
+        "Include a warm greeting + friendly sign-off",
+        "Include feelings and reactions"
+      ],
+      "donts": [
+        "Write 'Dear Sir/Madam'",
+        "Use academic or stiff language",
+        "Forget to include an opening and closing",
+        "Use passive voice excessively — too formal!"
+      ],
+      "checklist": [
+        "I used a friendly, informal greeting",
+        "I referred to our last contact in the opening",
+        "I described the medical situation / innovation clearly",
+        "I included my feelings and reactions",
+        "I used contractions naturally",
+        "I used 5+ medical vocabulary words",
+        "I included 4+ linking devices",
+        "I ended with an appropriate informal sign-off"
+      ]
+    },
+    {
+      "unit": "Unit 5 — Healthy Lifestyles",
+      "type": "Opinion Essay",
+      "color": "#6A1B9A",
+      "len": "150–200 words",
+      "prompts": [
+        "\"Exercise is more important than diet for maintaining good health.\" Do you agree?",
+        "Write an essay arguing whether technology is helping or harming people's health.",
+        "\"Young people today have unhealthier lifestyles than previous generations.\" Do you agree?",
+        "\"Fast food restaurants should be banned near schools.\" Do you agree?",
+        "\"Mental health education is just as important as physical education in schools.\" To what extent do you agree?",
+        "\"Governments should introduce a tax on unhealthy food and drinks to encourage better lifestyle choices.\" Discuss."
+      ],
+      "structure": [
+        "Introduction — state your opinion clearly as a thesis",
+        "Argument 1 — reason + example or evidence",
+        "Argument 2 — reason + example or evidence",
+        "Argument 3 or counter-argument (optional)",
+        "Conclusion — restate opinion in different words"
+      ],
+      "tips": [
+        "State your opinion clearly in the first paragraph",
+        "Use modal verbs: should, must, ought to, can",
+        "Support each argument with a specific example or fact",
+        "Use 5+ linking devices and reference words",
+        "Include conditional sentences in your argument",
+        "Do NOT contradict yourself — stay consistent"
+      ],
+      "dos": [
+        "State your opinion clearly from the start",
+        "Use modal verbs to show certainty and opinion",
+        "Support every argument with evidence",
+        "Use linkers: Firstly / Furthermore / In conclusion"
+      ],
+      "donts": [
+        "Be vague — be definitive!",
+        "Change your opinion mid-essay",
+        "Repeat ideas without developing them",
+        "Use casual language: 'a lot of', 'really'"
+      ],
+      "checklist": [
+        "My thesis is stated clearly in the introduction",
+        "I gave 2–3 clear arguments",
+        "Each argument is supported with evidence",
+        "I used modal verbs: should / must / could",
+        "I used 5+ linking devices",
+        "I maintained a formal register throughout",
+        "My conclusion restates my opinion in different words",
+        "I did not introduce new ideas in the conclusion"
+      ]
+    },
+    {
+      "unit": "Unit 9 — The Environment",
+      "type": "Formal Report",
+      "color": "#0277BD",
+      "len": "200–250 words",
+      "prompts": [
+        "Write a report on the main causes and effects of air pollution in your city or country.",
+        "Write a report on the water shortage crisis — causes, effects, and possible solutions.",
+        "Write a report on how deforestation is affecting biodiversity around the world.",
+        "Write a report on the causes and effects of plastic pollution in the ocean and suggest practical solutions.",
+        "Write a report on how climate change is affecting global weather patterns and threatening food security.",
+        "Write a report on the impact of urbanisation on natural habitats and recommend steps to protect endangered species."
+      ],
+      "structure": [
+        "Title: 'Report on [Topic]'",
+        "Introduction — state purpose: 'This report aims to…'",
+        "Causes / Background (heading)",
+        "Effects / Findings (heading)",
+        "Recommendations (heading)",
+        "Conclusion — summary + call to action"
+      ],
+      "tips": [
+        "Use clear headings and subheadings for each section",
+        "Use reporting verbs: indicate, suggest, show, reveal",
+        "Use formal connectors: Furthermore, In contrast, Therefore",
+        "Use the passive voice: 'It has been estimated that…'",
+        "Avoid personal pronouns (I, we, you)",
+        "Recommendations must use modal verbs: should, must, could"
+      ],
+      "dos": [
+        "Use clear headings for each section",
+        "Write in the third person",
+        "Use passive voice: 'Forests are being destroyed…'",
+        "Include specific examples or statistics"
+      ],
+      "donts": [
+        "Write 'I think' — keep it objective!",
+        "Write continuous paragraphs with no headings",
+        "Use casual or emotional language",
+        "Forget to include an introduction or conclusion"
+      ],
+      "checklist": [
+        "My report has a clear, informative title",
+        "Introduction states the purpose of the report",
+        "I used headings for each section",
+        "I used the passive voice appropriately",
+        "I used reporting verbs: indicate, suggest, reveal",
+        "I avoided personal pronouns (I, we, you)",
+        "My recommendations use modal verbs",
+        "My conclusion summarises the key points"
+      ]
+    },
+    {
+      "unit": "Unit 11 — Fashion & Lifestyle",
+      "type": "Magazine Article",
+      "color": "#AD1457",
+      "len": "150–200 words",
+      "prompts": [
+        "Write a magazine article about the impact of fast fashion on the environment and society.",
+        "Write a newspaper article about how fashion shapes identity and cultural expression.",
+        "Write an article arguing that sustainable fashion should replace fast fashion completely.",
+        "Write a magazine article about how social media is changing young people's attitudes towards fashion and body image.",
+        "Write an article exploring whether traditional cultural dress should be preserved or modernised for the 21st century.",
+        "Write a magazine article about the rise of vintage and second-hand fashion — is it a genuine environmental movement or just a trend?"
+      ],
+      "structure": [
+        "Catchy Title — bold, informative, attention-grabbing",
+        "Hook / Opening — startling statistic, question, or bold statement",
+        "Preview sentence: 'This article explores…'",
+        "Body Paragraph 1 — first main point + evidence",
+        "Body Paragraph 2 — second main point + evidence",
+        "Conclusion — thought-provoking final statement"
+      ],
+      "tips": [
+        "Your title is EVERYTHING — make it compelling!",
+        "Open with a powerful hook: statistic, question, or bold claim",
+        "Use an engaging, confident tone",
+        "Use descriptive expressions to make writing vivid",
+        "Vary sentence length for rhythm and impact",
+        "End with a thought-provoking statement"
+      ],
+      "dos": [
+        "Write a catchy, informative title",
+        "Start with an engaging hook",
+        "Include specific examples, facts, or statistics",
+        "End with a thought-provoking conclusion"
+      ],
+      "donts": [
+        "Start with 'In this article, I will…'",
+        "Use a dull title like 'About Fashion'",
+        "Write in bullet points — articles use paragraphs!",
+        "End abruptly without a conclusion"
+      ],
+      "checklist": [
+        "My title is catchy and attention-grabbing",
+        "My opening line hooks the reader immediately",
+        "I included a preview sentence",
+        "I developed two clear body paragraphs",
+        "I used descriptive and engaging vocabulary",
+        "I used linking devices and reference words",
+        "My conclusion is thought-provoking",
+        "I maintained a semi-formal, engaging tone"
+      ]
+    },
+    {
+      "unit": "Unit 10 — Feeding the World",
+      "type": "Food Production Report",
+      "color": "#558B2F",
+      "len": "200–250 words",
+      "prompts": [
+        "Write a report on the main challenges facing global food production and suggest solutions to ensure food security for future generations.",
+        "Write a report on how modern farming techniques such as vertical farming and GMOs are changing food production around the world.",
+        "Write a report on the causes and effects of food waste globally and recommend strategies to reduce it.",
+        "Write a report on how climate change is threatening agricultural systems and what governments and farmers can do to adapt.",
+        "Write a report on the impact of overfishing on marine ecosystems and suggest sustainable alternatives.",
+        "Write a report on whether organic farming can realistically feed the world's growing population."
+      ],
+      "structure": [
+        "Title: 'Report on [Topic]'",
+        "Introduction — state purpose: 'This report aims to…'",
+        "Background / Causes (heading)",
+        "Effects / Findings (heading)",
+        "Recommendations (heading)",
+        "Conclusion — summary + call to action"
+      ],
+      "tips": [
+        "Use clear headings for each section of your report",
+        "Write in the third person — never use I, we, or you",
+        "Use the passive voice: 'It has been estimated that…'",
+        "Use reporting verbs: indicate, suggest, reveal, demonstrate",
+        "Include food and agriculture vocabulary: yield, crop, irrigation, livestock",
+        "Recommendations must use modal verbs: should, must, could, ought to"
+      ],
+      "dos": [
+        "Write in an objective, impersonal tone",
+        "Use headings to organise sections clearly",
+        "Use passive voice: 'Millions of tonnes of food are wasted…'",
+        "Support findings with specific examples or statistics"
+      ],
+      "donts": [
+        "Write 'I think' or 'In my opinion'",
+        "Write continuous paragraphs without headings",
+        "Use emotional or informal language",
+        "Forget the introduction or conclusion"
+      ],
+      "checklist": [
+        "My report has a clear, informative title",
+        "Introduction states the purpose of the report",
+        "I used headings for each section",
+        "I wrote in the third person throughout",
+        "I used the passive voice appropriately",
+        "I used reporting verbs: indicate, suggest, reveal",
+        "I included relevant food/agriculture vocabulary",
+        "My recommendations use modal verbs (should/must/could)",
+        "My conclusion summarises the key points"
+      ]
+    }
+  ]
 };

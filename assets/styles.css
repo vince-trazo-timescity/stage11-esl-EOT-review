@@ -10,3 +10,5 @@
 @media print{body.printing-record *{visibility:hidden}body.printing-record #participationRecord,body.printing-record #participationRecord *{visibility:visible}body.printing-record #participationRecord{position:absolute;left:0;top:0;width:100%}body.printing-record #participationRecord .no-print{display:none}}
 
 #exportDialog{max-width:720px;width:calc(100% - 32px)}#exportLink{overflow-wrap:anywhere}#exportText{font:13px/1.6 ui-monospace,monospace}.mobile-nav-label{margin:0 0 8px;color:var(--muted);font-size:11px}@media(max-width:760px){.mobile-nav-label{display:block}}
+/* Restored unit directory and long task prompts remain inside narrow layouts. */
+.journey-grid .panel{min-width:0;margin:0}.pill-row{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}.panel li,.badge{overflow-wrap:anywhere}select{max-width:100%;min-width:0}.panel blockquote{margin:20px 0;padding:16px;border-left:3px solid var(--teal);overflow-wrap:anywhere}
