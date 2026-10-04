@@ -28,7 +28,7 @@ Comprehensive personalised analysis would require a separate server/serverless e
 
 ## Saving, recovery and privacy
 
-Data is saved in `localStorage` under `stage11-writing-studio-v3`, only in the current browser/device. There is no student-text upload, account system, analytics or external font request. Copy/download a draft or export a JSON backup before switching device or clearing browser storage. Export dialogs provide a persistent save link and copyable text if downloads are restricted. Restore accepts validated schema-3 JSON; unsafe/malformed files are rejected. Newer current drafts win over older imported drafts. Other restored collections use imported values.
+Data is saved in `localStorage` under `stage11-writing-studio-v3`, only in the current browser/device. There is no student-text upload, account system, analytics or external font request. Copy/download a draft or export a JSON backup before switching device or clearing browser storage. Export dialogs provide a persistent save link and copyable text if downloads are restricted. Restore accepts a JSON file or pasted JSON through the same validated schema-3 flow; unsafe/malformed files are rejected. Newer current drafts win over older imported drafts. Other restored collections use imported values.
 
 Use one writing tab at a time. A detected change from another tab pauses local saving in the current tab to avoid silently overwriting work; export its text before reloading. Storage failures leave work available in the session with a backup warning. Incompatible/corrupt saved raw data is kept untouched and can be exported. Reset controls explain their scope and confirm before clearing original work; only this studio's key is replaced.
 
@@ -36,11 +36,14 @@ The previous site stored work in memory only. Previously closed-tab work cannot 
 
 ## Development and verification
 
-No dependencies or build step:
+No production dependencies or build step. The regression tests use jsdom as a development dependency:
 
 ```sh
+npm ci
 npm run dev -- --port 4173
 npm test
 ```
 
 Open `tests/responsive.html` to inspect 390px, 768px, 1366px and 320px iframe viewports. See `VERIFICATION.md` for what was tested and limitations. The app can be served from any static server, including GitHub Pages. Downloaded source works offline when served locally; an initial offline visit to GitHub Pages is not supported by a service worker.
+
+CTA regression coverage in `tests/cta.test.cjs` checks all 396 page/genre/pathway combinations, all 52 task destinations, scoped resets, exports, restoration, timers, revisions and clipboard/print invocation. DOM simulation does not certify native browser downloads or physical printing. Edited drafts display a notice when their visible feedback belongs to the previous submission. Navigation cancels an open reset dialog to prevent clearing a different task after browser history changes.

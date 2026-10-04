@@ -2,7 +2,7 @@
 
 ## Automated checks — passed
 
-`npm test`: 9 tests passed, 0 failed.
+`npm test`: 17 tests passed, 0 failed.
 
 - All six genre/pathway routes: 90 uniquely identified checkpoints, answer keys, explanations and hints; five linker relationships per route.
 - All 150 vocabulary entries: different inference/transfer contexts, collocations, and context evidence actually present in the inference sentence.
@@ -49,3 +49,15 @@ Deployment status is reported separately after the commit and live-page verifica
 - Review quiz validation, hints, explanations, disabled repeated checking and first-attempt score preservation after a correct-to-wrong retry were exercised. All three quiz modes render.
 - All eleven pages checked at iframe widths 390, 768, 1366 and 320px: 44 page/width checks with no document-wide horizontal overflow. All twelve genre draft selectors checked at 320px; all display their task choices and writing input without overflow. These are viewport checks, not physical devices.
 - Automated coverage verifies every reference and archived prompt, every unit’s task availability, extended-genre backup acceptance and informal-register handling. Existing feedback-case, language-edit, vocabulary, revision and validation tests continue to pass.
+
+## CTA and saved-work regression audit — 5 October 2026
+
+- Eight additional jsdom interaction tests pass. They execute application handlers, rather than merely checking button labels. Every page, genre and pathway renders (396 combinations), with unique element IDs, valid navigation destinations and click handlers bound to every main-page button.
+- All 52 task destinations select their correct genre, vocabulary bank and exact prompt; separate drafts/plans survive switching. All 52 draft CTA links were also clicked and verified in Cloud Chrome.
+- Simulated interaction coverage: vocabulary submission validation, hints, support reveal, transfer checking/retry, next/previous/shuffle, definition table, context-card buttons, natural phrase choices/reset; every primary practice item type, hints, locked checking, retries, clear/reset and sentence-chunk undo/clear; all quiz modes, prediction gates, support and scoped resets.
+- Simulated draft controls: empty review, editing/review freshness, unchanged-text version deduplication, version copying, draft copying/export, independent mode, timer start/pause/reset/expiry/Untimed/invalid input, development review/reset and retained full drafts.
+- Simulated protection controls: backup/summary exports and selectable export text; valid file and pasted-JSON restoration; invalid JSON rejection; keeping newer current drafts; print invocation and cleanup; reset cancellation and complete reset of test-only work. Native file picker/download/print output is not certified by simulation.
+- Browser verification: all eleven navigation links, 52 draft CTAs, backup dialog/select-text/close, rejected invalid pasted JSON, successful restoration from real exported JSON, and edited-draft stale-feedback notice. Final responsive rerun: 44 page/width checks, no document-wide horizontal overflow; no application console errors captured.
+- Fixes: edited drafts visibly distinguish previous-submission feedback; original review/independence edits update draft timestamps; restoration supports pasted JSON and allows selecting the same file again; missing sentence chunks are handled safely; unit quiz links explicitly select vocabulary mode; task links without a unit select the matching bank; full reset clears route/recovery state; extended-quiz progress labels reflect the actual quiz; participation printing hides unrelated layout. Navigation cancels open reset confirmation.
+
+Remaining limits: native completed downloads and native file-picker restoration remain unverified in this cloud browser. Pasted backup restoration is verified in the browser. Print invocation is covered in simulation, but physical printing/PDF pagination and cross-browser screen-reader/device certification remain unverified. No guarantee of zero defects across every possible device or saved-data condition is claimed.

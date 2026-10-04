@@ -1,1 +1,12 @@
-{"name":"stage11-writing-practice","version":"3.0.0","private":true,"scripts":{"dev":"node tests/dev-server.cjs","test":"node --test tests/engine.test.cjs"}}
+{
+  "name": "stage11-writing-practice",
+  "version": "3.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node tests/dev-server.cjs",
+    "test": "node --test tests/*.test.cjs"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0"
+  }
+}
