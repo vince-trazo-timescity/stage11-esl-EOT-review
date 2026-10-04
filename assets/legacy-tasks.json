@@ -1,0 +1,292 @@
+[
+  {
+    "unit": "Unit 2 — Organizations & Volunteering",
+    "type": "Formal Essay",
+    "color": "#1A7F8E",
+    "len": "200–250 words",
+    "prompts": [
+      "\"Should volunteering be a compulsory requirement for all school students?\"",
+      "\"How do charitable organisations make communities stronger?\"",
+      "\"Non-profit organisations are the most effective way to tackle social problems.\" Do you agree?"
+    ],
+    "structure": [
+      "Introduction — hook + thesis statement",
+      "Body Paragraph 1 — point + example",
+      "Body Paragraph 2 — point + example",
+      "Counter-argument (optional)",
+      "Conclusion — restate + final thought"
+    ],
+    "tips": [
+      "Start with a thought-provoking hook (statistic or question)",
+      "State your thesis clearly at the end of the introduction",
+      "Each body paragraph must have ONE main idea",
+      "Use at least 3 different linking devices",
+      "Use at least 1 relative clause",
+      "End with a strong conclusion — no new ideas"
+    ],
+    "dos": [
+      "Use formal vocabulary: demonstrate, indicate",
+      "Write 'do not', 'cannot' — NO contractions",
+      "Organise clearly with paragraph breaks",
+      "Support every point with evidence"
+    ],
+    "donts": [
+      "Use slang or casual expressions",
+      "Write 'I think' or 'I feel' in a neutral essay",
+      "Start sentences with And, But, or So",
+      "Repeat the same linking word many times"
+    ],
+    "checklist": [
+      "I have an introduction, body paragraphs, and conclusion",
+      "My thesis is clearly stated in the introduction",
+      "I used 3+ different linking devices",
+      "I used at least 1 relative clause",
+      "I maintained a formal register throughout",
+      "I did not use contractions",
+      "My conclusion does not introduce new ideas",
+      "I proofread my final draft"
+    ]
+  },
+  {
+    "unit": "Unit 3 — Famous People & Adventures",
+    "type": "Blog Entry",
+    "color": "#E07B39",
+    "len": "200–250 words",
+    "prompts": [
+      "Write a blog entry describing the life, qualities, and impact of a famous or inspirational person you admire.",
+      "Describe the most incredible adventure or achievement in history and explain what made it remarkable."
+    ],
+    "structure": [
+      "Catchy Title / Headline",
+      "Hook — surprising fact, quote, or question",
+      "Background — who they are, where from",
+      "Qualities & Evidence — 2–3 key traits",
+      "Impact / Legacy — why they matter",
+      "Conclusion — personal reflection"
+    ],
+    "tips": [
+      "Begin with an engaging hook sentence",
+      "Use vivid descriptive adjectives: extraordinary, pioneering",
+      "Discourse markers: Firstly… Moreover… In conclusion…",
+      "Include at least 1 relative clause",
+      "Avoid slang — formal/semi-formal tone",
+      "End with a personal reflection"
+    ],
+    "dos": [
+      "Use vivid adjectives: extraordinary, courageous",
+      "Include at least 1 relative clause",
+      "Reference specific facts or events",
+      "Maintain a formal, respectful tone"
+    ],
+    "donts": [
+      "Write a list of facts without connecting them",
+      "Start every sentence with 'He' or 'She'",
+      "Use informal slang or abbreviations",
+      "Write only one unstructured paragraph"
+    ],
+    "checklist": [
+      "My title is catchy and informative",
+      "I started with an engaging hook",
+      "I described background, qualities, and impact",
+      "I used discourse markers: Firstly, Furthermore, In conclusion",
+      "I used at least 1 relative clause",
+      "I used vivid descriptive vocabulary",
+      "My conclusion includes a personal reflection",
+      "I maintained a formal tone throughout"
+    ]
+  },
+  {
+    "unit": "Unit 4 — Medical Care",
+    "type": "Informal Letter",
+    "color": "#2E7D32",
+    "len": "180–220 words",
+    "prompts": [
+      "Write a letter to a friend telling them about a medical experience you or someone you know had, and the treatment or recovery process.",
+      "Write a letter to a friend explaining an exciting medical innovation (e.g. telemedicine, vaccines) and how it has changed people's lives."
+    ],
+    "structure": [
+      "Greeting: Hey [Name]! / Hi [Name],",
+      "Opening: Refer to last contact + reason for writing",
+      "Body 1: Describe the medical situation or innovation",
+      "Body 2: Explain the impact, your feelings, or what happened",
+      "Closing: Wish + question to them",
+      "Sign-off: Lots of love, / See you soon!"
+    ],
+    "tips": [
+      "Use contractions naturally: I'm, it's, can't, didn't",
+      "Include personal pronouns: I, me, my, you, your",
+      "Use informal expressions: to be honest, you won't believe it",
+      "Include 4+ linking devices: because, although, in the end",
+      "Use at least 1 future-in-the-past sentence",
+      "Use 5+ medical vocabulary words"
+    ],
+    "dos": [
+      "Use contractions: I'm, it's, didn't",
+      "Use personal pronouns: I, you, my",
+      "Include a warm greeting + friendly sign-off",
+      "Include feelings and reactions"
+    ],
+    "donts": [
+      "Write 'Dear Sir/Madam'",
+      "Use academic or stiff language",
+      "Forget to include an opening and closing",
+      "Use passive voice excessively — too formal!"
+    ],
+    "checklist": [
+      "I used a friendly, informal greeting",
+      "I referred to our last contact in the opening",
+      "I described the medical situation / innovation clearly",
+      "I included my feelings and reactions",
+      "I used contractions naturally",
+      "I used 5+ medical vocabulary words",
+      "I included 4+ linking devices",
+      "I ended with an appropriate informal sign-off"
+    ]
+  },
+  {
+    "unit": "Unit 5 — Healthy Lifestyles",
+    "type": "Opinion Essay",
+    "color": "#6A1B9A",
+    "len": "150–200 words",
+    "prompts": [
+      "\"Exercise is more important than diet for maintaining good health.\" Do you agree?",
+      "Write an essay arguing whether technology is helping or harming people's health.",
+      "\"Young people today have unhealthier lifestyles than previous generations.\" Do you agree?"
+    ],
+    "structure": [
+      "Introduction — state your opinion clearly as a thesis",
+      "Argument 1 — reason + example or evidence",
+      "Argument 2 — reason + example or evidence",
+      "Argument 3 or counter-argument (optional)",
+      "Conclusion — restate opinion in different words"
+    ],
+    "tips": [
+      "State your opinion clearly in the first paragraph",
+      "Use modal verbs: should, must, ought to, can",
+      "Support each argument with a specific example or fact",
+      "Use 5+ linking devices and reference words",
+      "Include conditional sentences in your argument",
+      "Do NOT contradict yourself — stay consistent"
+    ],
+    "dos": [
+      "State your opinion clearly from the start",
+      "Use modal verbs to show certainty and opinion",
+      "Support every argument with evidence",
+      "Use linkers: Firstly / Furthermore / In conclusion"
+    ],
+    "donts": [
+      "Be vague — be definitive!",
+      "Change your opinion mid-essay",
+      "Repeat ideas without developing them",
+      "Use casual language: 'a lot of', 'really'"
+    ],
+    "checklist": [
+      "My thesis is stated clearly in the introduction",
+      "I gave 2–3 clear arguments",
+      "Each argument is supported with evidence",
+      "I used modal verbs: should / must / could",
+      "I used 5+ linking devices",
+      "I maintained a formal register throughout",
+      "My conclusion restates my opinion in different words",
+      "I did not introduce new ideas in the conclusion"
+    ]
+  },
+  {
+    "unit": "Unit 9 — The Environment",
+    "type": "Formal Report",
+    "color": "#0277BD",
+    "len": "200–250 words",
+    "prompts": [
+      "Write a report on the main causes and effects of air pollution in your city or country.",
+      "Write a report on the water shortage crisis — causes, effects, and possible solutions.",
+      "Write a report on how deforestation is affecting biodiversity around the world."
+    ],
+    "structure": [
+      "Title: 'Report on [Topic]'",
+      "Introduction — state purpose: 'This report aims to…'",
+      "Causes / Background (heading)",
+      "Effects / Findings (heading)",
+      "Recommendations (heading)",
+      "Conclusion — summary + call to action"
+    ],
+    "tips": [
+      "Use clear headings and subheadings for each section",
+      "Use reporting verbs: indicate, suggest, show, reveal",
+      "Use formal connectors: Furthermore, In contrast, Therefore",
+      "Use the passive voice: 'It has been estimated that…'",
+      "Avoid personal pronouns (I, we, you)",
+      "Recommendations must use modal verbs: should, must, could"
+    ],
+    "dos": [
+      "Use clear headings for each section",
+      "Write in the third person",
+      "Use passive voice: 'Forests are being destroyed…'",
+      "Include specific examples or statistics"
+    ],
+    "donts": [
+      "Write 'I think' — keep it objective!",
+      "Write continuous paragraphs with no headings",
+      "Use casual or emotional language",
+      "Forget to include an introduction or conclusion"
+    ],
+    "checklist": [
+      "My report has a clear, informative title",
+      "Introduction states the purpose of the report",
+      "I used headings for each section",
+      "I used the passive voice appropriately",
+      "I used reporting verbs: indicate, suggest, reveal",
+      "I avoided personal pronouns (I, we, you)",
+      "My recommendations use modal verbs",
+      "My conclusion summarises the key points"
+    ]
+  },
+  {
+    "unit": "Unit 11 — Fashion & Lifestyle",
+    "type": "Magazine Article",
+    "color": "#AD1457",
+    "len": "150–200 words",
+    "prompts": [
+      "Write a magazine article about the impact of fast fashion on the environment and society.",
+      "Write a newspaper article about how fashion shapes identity and cultural expression.",
+      "Write an article arguing that sustainable fashion should replace fast fashion completely."
+    ],
+    "structure": [
+      "Catchy Title — bold, informative, attention-grabbing",
+      "Hook / Opening — startling statistic, question, or bold statement",
+      "Preview sentence: 'This article explores…'",
+      "Body Paragraph 1 — first main point + evidence",
+      "Body Paragraph 2 — second main point + evidence",
+      "Conclusion — thought-provoking final statement"
+    ],
+    "tips": [
+      "Your title is EVERYTHING — make it compelling!",
+      "Open with a powerful hook: statistic, question, or bold claim",
+      "Use an engaging, confident tone",
+      "Use descriptive expressions to make writing vivid",
+      "Vary sentence length for rhythm and impact",
+      "End with a thought-provoking statement"
+    ],
+    "dos": [
+      "Write a catchy, informative title",
+      "Start with an engaging hook",
+      "Include specific examples, facts, or statistics",
+      "End with a thought-provoking conclusion"
+    ],
+    "donts": [
+      "Start with 'In this article, I will…'",
+      "Use a dull title like 'About Fashion'",
+      "Write in bullet points — articles use paragraphs!",
+      "End abruptly without a conclusion"
+    ],
+    "checklist": [
+      "My title is catchy and attention-grabbing",
+      "My opening line hooks the reader immediately",
+      "I included a preview sentence",
+      "I developed two clear body paragraphs",
+      "I used descriptive and engaging vocabulary",
+      "I used linking devices and reference words",
+      "My conclusion is thought-provoking",
+      "I maintained a semi-formal, engaging tone"
+    ]
+  }
+]

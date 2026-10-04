@@ -1,0 +1,758 @@
+[
+  {
+    "id": "u2",
+    "num": "Unit 2",
+    "name": "Organizations & Volunteering",
+    "color": "#1A7F8E",
+    "writing": "Formal Essay",
+    "vocab": [
+      {
+        "w": "volunteer",
+        "d": "A person who works without pay to help others",
+        "e": "She volunteers at the local hospital every weekend."
+      },
+      {
+        "w": "charity",
+        "d": "An organisation that raises money and support for those in need",
+        "e": "The charity raised thousands for flood victims."
+      },
+      {
+        "w": "non-profit",
+        "d": "An organisation that reinvests money into its mission rather than shareholders",
+        "e": "Non-profit schools prioritise education over income."
+      },
+      {
+        "w": "commitment",
+        "d": "Dedication and loyalty to a cause over a period of time",
+        "e": "His commitment to the community was truly inspiring."
+      },
+      {
+        "w": "community service",
+        "d": "Unpaid work that benefits others in the local community",
+        "e": "Students complete community service each term."
+      },
+      {
+        "w": "fundraise",
+        "d": "To collect money for a cause through events and activities",
+        "e": "They organised a marathon to fundraise for the shelter."
+      },
+      {
+        "w": "impact",
+        "d": "A strong, noticeable effect or influence on something",
+        "e": "The organisation made a huge impact on local poverty."
+      },
+      {
+        "w": "awareness",
+        "d": "Knowledge or understanding of an issue or situation",
+        "e": "The campaign raised awareness of climate change."
+      },
+      {
+        "w": "dedication",
+        "d": "Persistent and devoted effort to a purpose or goal",
+        "e": "Her dedication to the cause never wavered."
+      },
+      {
+        "w": "support",
+        "d": "Assistance or help provided to a person or cause",
+        "e": "The government offered financial support to charities."
+      },
+      {
+        "w": "altruism",
+        "d": "Selfless concern for the wellbeing of others",
+        "e": "His altruism was evident in every decision he made."
+      },
+      {
+        "w": "philanthropist",
+        "d": "A person who donates money or time to promote the welfare of others",
+        "e": "The philanthropist funded a new school in the village."
+      },
+      {
+        "w": "civic engagement",
+        "d": "Active participation in the social and political life of a community",
+        "e": "Civic engagement is essential for a functioning democracy."
+      },
+      {
+        "w": "empowerment",
+        "d": "Giving people more control over their own lives and decisions",
+        "e": "The programme focused on the empowerment of young women."
+      },
+      {
+        "w": "initiative",
+        "d": "A plan or action aimed at solving a problem",
+        "e": "The new initiative will help 200 families in need."
+      }
+    ]
+  },
+  {
+    "id": "u3",
+    "num": "Unit 3",
+    "name": "Famous People & Adventures",
+    "color": "#E07B39",
+    "writing": "Blog Entry",
+    "vocab": [
+      {
+        "w": "resilient",
+        "d": "Able to recover quickly from difficulties; mentally tough",
+        "e": "Despite many setbacks, she remained resilient."
+      },
+      {
+        "w": "visionary",
+        "d": "A person with original, inspiring ideas about the future",
+        "e": "Steve Jobs was considered a visionary of technology."
+      },
+      {
+        "w": "pioneer",
+        "d": "Among the first to explore or develop a new idea or field",
+        "e": "Marie Curie was a pioneer in nuclear physics."
+      },
+      {
+        "w": "humanitarian",
+        "d": "A person who works to promote the welfare of others",
+        "e": "Nelson Mandela was celebrated as a great humanitarian."
+      },
+      {
+        "w": "determination",
+        "d": "Firmness of purpose; the quality of not giving up",
+        "e": "Her determination to succeed impressed everyone."
+      },
+      {
+        "w": "perseverance",
+        "d": "Continued effort to achieve something despite difficulty",
+        "e": "Perseverance is the key to mastering any skill."
+      },
+      {
+        "w": "innovation",
+        "d": "A new method, idea, or invention; the act of creating something new",
+        "e": "His innovation transformed the music industry."
+      },
+      {
+        "w": "sacrifice",
+        "d": "Giving up something valued for the sake of something more important",
+        "e": "Her sacrifice allowed her team to win the championship."
+      },
+      {
+        "w": "recognition",
+        "d": "Acknowledgement and appreciation of achievement or merit",
+        "e": "She finally received the recognition she deserved."
+      },
+      {
+        "w": "legacy",
+        "d": "Something handed down from the past; lasting impact",
+        "e": "His legacy continues to inspire scientists worldwide."
+      },
+      {
+        "w": "trailblazer",
+        "d": "A person who is the first to do something; a pioneer",
+        "e": "She was a trailblazer in women's professional football."
+      },
+      {
+        "w": "accolade",
+        "d": "An award or expression of praise and approval",
+        "e": "The film won numerous accolades at the festival."
+      },
+      {
+        "w": "tenacity",
+        "d": "The quality of holding firmly to a purpose; determination",
+        "e": "It was her tenacity that saw her through the crisis."
+      },
+      {
+        "w": "exemplary",
+        "d": "Representing the best possible example; worthy of imitation",
+        "e": "He showed exemplary courage throughout the ordeal."
+      },
+      {
+        "w": "prodigy",
+        "d": "A young person with exceptional abilities or qualities",
+        "e": "Mozart was considered a musical prodigy."
+      }
+    ]
+  },
+  {
+    "id": "u4",
+    "num": "Unit 4",
+    "name": "Medical Care",
+    "color": "#2E7D32",
+    "writing": "Informal Letter",
+    "vocab": [
+      {
+        "w": "diagnosis",
+        "d": "The identification of a disease from its signs and symptoms",
+        "e": "The doctor provided an accurate diagnosis within minutes."
+      },
+      {
+        "w": "treatment",
+        "d": "Medical care given to a patient for an illness or injury",
+        "e": "The treatment for the infection lasted three weeks."
+      },
+      {
+        "w": "recovery",
+        "d": "The process of becoming well again after an illness or injury",
+        "e": "Her recovery from surgery was faster than expected."
+      },
+      {
+        "w": "telemedicine",
+        "d": "Remote delivery of healthcare using technology and video calls",
+        "e": "Telemedicine allowed patients in rural areas to see specialists."
+      },
+      {
+        "w": "vaccination",
+        "d": "A substance that stimulates immunity to a specific disease",
+        "e": "Vaccination programmes have eliminated many dangerous diseases."
+      },
+      {
+        "w": "symptoms",
+        "d": "Physical changes in the body that indicate the presence of a disease",
+        "e": "Common symptoms of flu include fever and body aches."
+      },
+      {
+        "w": "prevention",
+        "d": "Action taken to stop something harmful from happening",
+        "e": "Prevention is better than cure — regular check-ups matter."
+      },
+      {
+        "w": "rehabilitation",
+        "d": "Restoring health and ability through therapy and training",
+        "e": "He underwent months of rehabilitation after the accident."
+      },
+      {
+        "w": "prescription",
+        "d": "A doctor's written instruction for a patient's medication",
+        "e": "The prescription was collected at the pharmacy."
+      },
+      {
+        "w": "wellbeing",
+        "d": "The state of being comfortable, healthy, and happy",
+        "e": "Physical exercise contributes greatly to overall wellbeing."
+      },
+      {
+        "w": "prognosis",
+        "d": "A forecast of the likely outcome of a medical condition",
+        "e": "The doctor gave a positive prognosis for the patient."
+      },
+      {
+        "w": "chronic",
+        "d": "Persisting over a long period; recurring frequently",
+        "e": "Chronic back pain affects millions of people worldwide."
+      },
+      {
+        "w": "acute",
+        "d": "Severe and sudden in onset; short but intense",
+        "e": "He was admitted to hospital with acute appendicitis."
+      },
+      {
+        "w": "convalescence",
+        "d": "The gradual recovery of health and strength after illness",
+        "e": "She spent two weeks in convalescence at home."
+      },
+      {
+        "w": "immunology",
+        "d": "The study of the immune system and its functions",
+        "e": "Advances in immunology led to better cancer treatments."
+      }
+    ]
+  },
+  {
+    "id": "u5",
+    "num": "Unit 5",
+    "name": "Healthy Lifestyles",
+    "color": "#6A1B9A",
+    "writing": "Opinion Essay",
+    "vocab": [
+      {
+        "w": "immune system",
+        "d": "The body's defence system that fights illness and infection",
+        "e": "A balanced diet strengthens the immune system."
+      },
+      {
+        "w": "metabolism",
+        "d": "The chemical process of converting food into energy",
+        "e": "Regular exercise boosts metabolism significantly."
+      },
+      {
+        "w": "balanced diet",
+        "d": "A diet that contains the proper proportions of all nutrients",
+        "e": "A balanced diet includes protein, carbohydrates, and healthy fats."
+      },
+      {
+        "w": "nutrition",
+        "d": "The process of obtaining the food needed for health and growth",
+        "e": "Good nutrition is vital for children's development."
+      },
+      {
+        "w": "hydration",
+        "d": "The process of maintaining sufficient water in the body",
+        "e": "Staying hydrated improves concentration and energy levels."
+      },
+      {
+        "w": "mental health",
+        "d": "A person's emotional, psychological, and social wellbeing",
+        "e": "Talking about mental health reduces stigma."
+      },
+      {
+        "w": "sedentary",
+        "d": "Tending to spend much time seated and doing little physical activity",
+        "e": "A sedentary lifestyle increases the risk of heart disease."
+      },
+      {
+        "w": "obesity",
+        "d": "A medical condition of excessive body fat that poses health risks",
+        "e": "Obesity rates have risen sharply in recent decades."
+      },
+      {
+        "w": "moderation",
+        "d": "Avoiding excess or extremes in behaviour or consumption",
+        "e": "Eating in moderation is healthier than strict dieting."
+      },
+      {
+        "w": "longevity",
+        "d": "Long life; the quality of lasting for a long time",
+        "e": "A healthy lifestyle contributes to longevity."
+      },
+      {
+        "w": "cardiovascular",
+        "d": "Relating to the heart and blood vessels",
+        "e": "Swimming is excellent cardiovascular exercise."
+      },
+      {
+        "w": "endorphins",
+        "d": "Natural chemicals in the brain that relieve pain and cause wellbeing",
+        "e": "Exercise releases endorphins, improving mood."
+      },
+      {
+        "w": "mindfulness",
+        "d": "Focused awareness of the present moment to reduce stress",
+        "e": "Mindfulness meditation can reduce anxiety."
+      },
+      {
+        "w": "aerobic",
+        "d": "Relating to exercise that increases heart rate over time",
+        "e": "Jogging and cycling are popular aerobic activities."
+      },
+      {
+        "w": "insomnia",
+        "d": "Inability to sleep regularly or well",
+        "e": "Stress and screen time can cause insomnia."
+      }
+    ]
+  },
+  {
+    "id": "u8",
+    "num": "Unit 8",
+    "name": "Animals & the Natural World",
+    "color": "#1565C0",
+    "writing": "Comparison Project",
+    "vocab": [
+      {
+        "w": "habitat",
+        "d": "The natural environment where an animal or plant lives",
+        "e": "Deforestation destroys the natural habitat of many species."
+      },
+      {
+        "w": "adaptation",
+        "d": "A change that helps an organism survive in its environment",
+        "e": "The polar bear's thick fur is an adaptation to cold climates."
+      },
+      {
+        "w": "predator",
+        "d": "An animal that hunts other animals for food",
+        "e": "The lion is an apex predator on the African savanna."
+      },
+      {
+        "w": "prey",
+        "d": "An animal that is hunted and killed by a predator",
+        "e": "Small fish are common prey for dolphins."
+      },
+      {
+        "w": "endangered",
+        "d": "At serious risk of extinction if action is not taken",
+        "e": "The blue whale is listed as an endangered species."
+      },
+      {
+        "w": "species",
+        "d": "A group of organisms that share common characteristics and can breed",
+        "e": "Scientists discover new species in the ocean every year."
+      },
+      {
+        "w": "migration",
+        "d": "The seasonal movement of animals to different regions",
+        "e": "Wildebeest migration is one of nature's greatest spectacles."
+      },
+      {
+        "w": "camouflage",
+        "d": "Blending in with surroundings to avoid detection",
+        "e": "The stick insect uses camouflage to hide from predators."
+      },
+      {
+        "w": "biodiversity",
+        "d": "The variety of plant and animal life in the world or a habitat",
+        "e": "Coral reefs support extraordinary biodiversity."
+      },
+      {
+        "w": "extinction",
+        "d": "The permanent dying out of a species from the earth",
+        "e": "The dodo bird was driven to extinction in the 17th century."
+      },
+      {
+        "w": "carnivore",
+        "d": "An animal that feeds only on the flesh of other animals",
+        "e": "The great white shark is a powerful marine carnivore."
+      },
+      {
+        "w": "nocturnal",
+        "d": "Active during the night and sleeping during the day",
+        "e": "Owls are nocturnal hunters with excellent night vision."
+      },
+      {
+        "w": "territorial",
+        "d": "Defending a specific area against others of the same species",
+        "e": "Wolves are highly territorial and mark their boundaries."
+      },
+      {
+        "w": "domesticated",
+        "d": "Tamed and kept by humans as pets or for farming",
+        "e": "Dogs were among the first animals to be domesticated."
+      },
+      {
+        "w": "aquatic",
+        "d": "Living or growing in or near water",
+        "e": "Penguins are excellent aquatic swimmers."
+      }
+    ]
+  },
+  {
+    "id": "u9",
+    "num": "Unit 9",
+    "name": "The Environment",
+    "color": "#0277BD",
+    "writing": "Formal Report",
+    "vocab": [
+      {
+        "w": "pollution",
+        "d": "Contamination of the environment by harmful substances",
+        "e": "Air pollution in major cities is a growing health concern."
+      },
+      {
+        "w": "deforestation",
+        "d": "Clearing of forests, usually for agriculture or development",
+        "e": "Deforestation in the Amazon threatens global biodiversity."
+      },
+      {
+        "w": "carbon footprint",
+        "d": "Total greenhouse gas emissions caused by a person or activity",
+        "e": "Flying reduces your carbon footprint by a significant amount."
+      },
+      {
+        "w": "sustainability",
+        "d": "Maintaining resources without causing long-term environmental damage",
+        "e": "Sustainability is at the heart of the company's strategy."
+      },
+      {
+        "w": "conservation",
+        "d": "Protection and careful management of the natural environment",
+        "e": "Wildlife conservation prevents endangered species from dying out."
+      },
+      {
+        "w": "renewable energy",
+        "d": "Energy from naturally replenished sources like solar and wind",
+        "e": "Renewable energy now powers 30% of the national grid."
+      },
+      {
+        "w": "emissions",
+        "d": "Gases released into the atmosphere, especially from burning fuel",
+        "e": "The factory reduced emissions by switching to clean energy."
+      },
+      {
+        "w": "water shortage",
+        "d": "Insufficient supply of fresh water to meet demand",
+        "e": "Many regions in Africa face severe water shortage."
+      },
+      {
+        "w": "ecosystem",
+        "d": "A community of living things interacting with their environment",
+        "e": "Wetlands are among the most productive ecosystems on Earth."
+      },
+      {
+        "w": "drought",
+        "d": "A prolonged period of abnormally low rainfall",
+        "e": "The prolonged drought devastated crops across the region."
+      },
+      {
+        "w": "biodegradable",
+        "d": "Capable of being broken down naturally by bacteria and organisms",
+        "e": "Biodegradable packaging reduces landfill waste."
+      },
+      {
+        "w": "ozone layer",
+        "d": "A layer of atmosphere that protects Earth from UV radiation",
+        "e": "CFCs were found to deplete the ozone layer."
+      },
+      {
+        "w": "greenhouse effect",
+        "d": "The warming of Earth caused by gases trapping solar heat",
+        "e": "Carbon dioxide intensifies the greenhouse effect."
+      },
+      {
+        "w": "erosion",
+        "d": "The gradual wearing away of rock or soil by water or wind",
+        "e": "Coastal erosion threatens homes and infrastructure."
+      },
+      {
+        "w": "pollutant",
+        "d": "A substance that pollutes or contaminates the environment",
+        "e": "Plastics are a major ocean pollutant."
+      }
+    ]
+  },
+  {
+    "id": "u10",
+    "num": "Unit 10",
+    "name": "Food Production",
+    "color": "#558B2F",
+    "writing": "Presentation",
+    "vocab": [
+      {
+        "w": "organic farming",
+        "d": "Farming without artificial chemicals or synthetic fertilisers",
+        "e": "Organic farming protects soil health for future generations."
+      },
+      {
+        "w": "supply chain",
+        "d": "The sequence of processes from production to consumer",
+        "e": "A disrupted supply chain can cause food shortages."
+      },
+      {
+        "w": "food miles",
+        "d": "The distance food travels from where it is grown to the consumer",
+        "e": "Locally grown produce has fewer food miles."
+      },
+      {
+        "w": "food security",
+        "d": "Reliable access to sufficient, nutritious food",
+        "e": "Food security remains a challenge for developing nations."
+      },
+      {
+        "w": "pesticide",
+        "d": "A chemical used to destroy pests, fungi, or insects on crops",
+        "e": "Overuse of pesticides pollutes waterways."
+      },
+      {
+        "w": "fair trade",
+        "d": "Trade that ensures producers in poorer countries are paid fairly",
+        "e": "Buying fair trade coffee supports farmers' livelihoods."
+      },
+      {
+        "w": "processed food",
+        "d": "Food altered from its natural state by industrial methods",
+        "e": "Processed food often contains high levels of salt and sugar."
+      },
+      {
+        "w": "sustainable",
+        "d": "Able to be maintained without depleting natural resources",
+        "e": "Sustainable farming methods protect the environment."
+      },
+      {
+        "w": "agriculture",
+        "d": "The science and practice of farming land",
+        "e": "Modern agriculture relies heavily on technology."
+      },
+      {
+        "w": "consumption",
+        "d": "The using up of a resource or product",
+        "e": "Global consumption of meat is linked to deforestation."
+      },
+      {
+        "w": "genetically modified",
+        "d": "Altered using biotechnology to produce desired traits",
+        "e": "Genetically modified crops can be resistant to drought."
+      },
+      {
+        "w": "monoculture",
+        "d": "Growing a single crop over a large area season after season",
+        "e": "Monoculture reduces biodiversity and depletes soil."
+      },
+      {
+        "w": "hydroponics",
+        "d": "Growing plants in mineral nutrient solutions without soil",
+        "e": "Hydroponics allows crops to be grown in urban environments."
+      },
+      {
+        "w": "localvore",
+        "d": "A person who focuses on eating locally produced food",
+        "e": "Being a localvore reduces food miles and supports farmers."
+      },
+      {
+        "w": "fermentation",
+        "d": "A chemical process used to preserve and transform food",
+        "e": "Fermentation is used to make yoghurt, beer, and kimchi."
+      }
+    ]
+  },
+  {
+    "id": "u11",
+    "num": "Unit 11",
+    "name": "Fashion & Lifestyle",
+    "color": "#AD1457",
+    "writing": "Magazine Article",
+    "vocab": [
+      {
+        "w": "identity",
+        "d": "The characteristics that define a person or group",
+        "e": "Fashion is a powerful way to express one's identity."
+      },
+      {
+        "w": "self-expression",
+        "d": "Expressing one's feelings or personality through choices",
+        "e": "Clothing is a form of self-expression for many people."
+      },
+      {
+        "w": "trend",
+        "d": "A general direction in which something is developing or changing",
+        "e": "Social media drives fashion trends faster than ever before."
+      },
+      {
+        "w": "fast fashion",
+        "d": "Cheap clothing produced rapidly to follow the latest trends",
+        "e": "Fast fashion creates mountains of textile waste each year."
+      },
+      {
+        "w": "sustainable fashion",
+        "d": "Clothing designed and produced in an environmentally friendly way",
+        "e": "Sustainable fashion brands use recycled or organic materials."
+      },
+      {
+        "w": "consumer",
+        "d": "A person who purchases goods and services",
+        "e": "Consumers are increasingly demanding ethical products."
+      },
+      {
+        "w": "brand",
+        "d": "A type of product made by a company under a particular name",
+        "e": "Luxury brands use exclusivity to justify high prices."
+      },
+      {
+        "w": "ethical",
+        "d": "Relating to moral principles about what is right and wrong",
+        "e": "Ethical fashion avoids exploitative labour practices."
+      },
+      {
+        "w": "influence",
+        "d": "The capacity to have an effect on someone's character or behaviour",
+        "e": "Social media influencers shape purchasing decisions."
+      },
+      {
+        "w": "perception",
+        "d": "The way in which something is regarded or interpreted",
+        "e": "Fashion affects others' perception of you."
+      },
+      {
+        "w": "haute couture",
+        "d": "High-end, custom-fitted clothing from prestigious fashion houses",
+        "e": "Haute couture pieces are handmade and extremely expensive."
+      },
+      {
+        "w": "upcycling",
+        "d": "Reusing discarded materials to create something of higher value",
+        "e": "Upcycling old clothes reduces waste and promotes creativity."
+      },
+      {
+        "w": "vintage",
+        "d": "Denoting something from the past that has lasting quality or appeal",
+        "e": "Vintage clothing shops are popular among eco-conscious shoppers."
+      },
+      {
+        "w": "minimalism",
+        "d": "A style or approach that uses very few or simple elements",
+        "e": "Minimalism in fashion means owning fewer, quality pieces."
+      },
+      {
+        "w": "capsule wardrobe",
+        "d": "A small collection of essential, timeless, versatile clothing",
+        "e": "A capsule wardrobe makes getting dressed easier."
+      }
+    ]
+  },
+  {
+    "id": "u12",
+    "num": "Unit 12",
+    "name": "Future Technologies",
+    "color": "#4527A0",
+    "writing": "Discussion / Talk",
+    "vocab": [
+      {
+        "w": "artificial intelligence",
+        "d": "Computer systems that perform tasks normally requiring human intelligence",
+        "e": "Artificial intelligence is revolutionising healthcare diagnostics."
+      },
+      {
+        "w": "automation",
+        "d": "Using technology to perform tasks without human involvement",
+        "e": "Automation in factories has reduced manufacturing costs."
+      },
+      {
+        "w": "renewable energy",
+        "d": "Energy from naturally replenished sources such as solar or wind",
+        "e": "Solar panels generate renewable energy from sunlight."
+      },
+      {
+        "w": "prototype",
+        "d": "An early model of a product used to test how it would work",
+        "e": "Engineers built a prototype of the electric aircraft."
+      },
+      {
+        "w": "algorithm",
+        "d": "A set of rules or instructions for solving a problem by a computer",
+        "e": "Search engines use complex algorithms to rank results."
+      },
+      {
+        "w": "disruption",
+        "d": "A major change that fundamentally alters an existing system",
+        "e": "Ride-sharing caused massive disruption to the taxi industry."
+      },
+      {
+        "w": "nanotechnology",
+        "d": "Technology that works at an extremely small molecular scale",
+        "e": "Nanotechnology is being explored for drug delivery systems."
+      },
+      {
+        "w": "biotechnology",
+        "d": "Using biological systems or living organisms to develop products",
+        "e": "Biotechnology has produced life-saving vaccines and medicines."
+      },
+      {
+        "w": "quantum computing",
+        "d": "Computing using quantum-mechanical phenomena for complex calculations",
+        "e": "Quantum computing could solve problems beyond classical computers."
+      },
+      {
+        "w": "augmented reality",
+        "d": "Technology overlaying digital information onto the real world",
+        "e": "Augmented reality is used in gaming and surgical training."
+      },
+      {
+        "w": "blockchain",
+        "d": "A digital record-keeping system that is decentralised and secure",
+        "e": "Blockchain technology is used in cryptocurrency transactions."
+      },
+      {
+        "w": "3D printing",
+        "d": "Creating three-dimensional objects from a digital design",
+        "e": "3D printing is being used to create prosthetic limbs."
+      },
+      {
+        "w": "infrastructure",
+        "d": "The basic systems and services needed for a society to function",
+        "e": "Smart infrastructure can improve traffic flow in cities."
+      },
+      {
+        "w": "sustainable",
+        "d": "Causing little or no damage to the environment; long-lasting",
+        "e": "Sustainable technology aims to reduce environmental harm."
+      },
+      {
+        "w": "innovation",
+        "d": "A new idea, device, or method that improves something",
+        "e": "Innovation in solar technology has reduced energy costs."
+      }
+    ]
+  }
+]
