@@ -61,3 +61,14 @@ Deployment status is reported separately after the commit and live-page verifica
 - Fixes: edited drafts visibly distinguish previous-submission feedback; original review/independence edits update draft timestamps; restoration supports pasted JSON and allows selecting the same file again; missing sentence chunks are handled safely; unit quiz links explicitly select vocabulary mode; task links without a unit select the matching bank; full reset clears route/recovery state; extended-quiz progress labels reflect the actual quiz; participation printing hides unrelated layout. Navigation cancels open reset confirmation.
 
 Remaining limits: native completed downloads and native file-picker restoration remain unverified in this cloud browser. Pasted backup restoration is verified in the browser. Print invocation is covered in simulation, but physical printing/PDF pagination and cross-browser screen-reader/device certification remain unverified. No guarantee of zero defects across every possible device or saved-data condition is claimed.
+
+## Five-defect correction — 5 October 2026
+
+`npm test`: 22 tests passed. Five new interaction regressions cover:
+- Restore imports missing non-draft records while preserving existing plans, reflections and practice records. Newer-draft timestamp protection remains unchanged. Non-draft records have no individual timestamps, so existing conflicts are conservatively retained.
+- Every unit vocabulary forward link opens that same unit's vocabulary review.
+- Feedback freshness includes the submitted text, task prompt and planned focus; changing focus requires a new review.
+- Valid restored sentence-order records without a chunks array support chunk selection and undo.
+- All ten supplementary writing formats offer a development CTA from the practice page.
+
+JavaScript syntax and diff whitespace checks passed. Existing 52 task destinations and 396 page/genre/pathway combinations remain covered. Native download, file-picker and print-output limitations above remain applicable.

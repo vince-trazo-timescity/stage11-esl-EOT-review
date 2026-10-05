@@ -31,3 +31,19 @@ test('Progress backup/restore, malformed input, newer draft protection, print an
 test('Navigation cancels destructive confirmation and imported empty chunk records do not crash',()=>{
  const E=require('../assets/engine.js'),saved=E.defaultState();saved.answers['essay-foundation-order-1']={value:'',checked:false};const a=setup('#practice?question=13',saved);a.click('checkAnswer');assert(a.el('practiceValidation').textContent.includes('Unanswered'));a.route('#draft');a.input('draftText','Keep this test draft.');a.click('clearDraft');assert(a.el('confirmDialog').open);a.route('#plan');assert(!a.el('confirmDialog').open);assert(Object.values(a.state().drafts).some(d=>d.text==='Keep this test draft.'));a.close();
 });
+
+test('Restore keeps current non-draft work and imports missing records',()=>{
+ const a=setup('#plan');a.input('planFocus','Current focus');a.route('#progress');a.input('reflect-strength','Current reflection');const incoming=a.state(),key=Object.keys(incoming.plans)[0];incoming.plans[key].focus='Old focus';incoming.reflections['essay-foundation'].strength='Old reflection';incoming.answers['review-linkers-0']={value:'Imported answer'};a.input('pasteBackup',JSON.stringify(incoming));a.click('restorePasted');assert.equal(a.state().plans[key].focus,'Current focus');assert.equal(a.state().reflections['essay-foundation'].strength,'Current reflection');assert.equal(a.state().answers['review-linkers-0'].value,'Imported answer');a.close();
+});
+test('Every vocabulary next CTA opens the same unit vocabulary review',()=>{
+ const a=setup();for(const u of a.w.STUDIO_DATA.units){a.route('#vocabulary?unit='+u.id);const link=[...a.doc.querySelectorAll('main a')].find(x=>x.textContent.includes('Next · Review'));assert(link);a.route(link.getAttribute('href'));assert.equal(a.el('reviewUnit').value,u.id);assert.equal(a.el('reviewMode').value,'vocabulary');}a.close();
+});
+test('Changed plan marks unchanged text feedback stale until reviewed again',()=>{
+ const a=setup('#plan');a.input('planFocus','Old focus');a.route('#draft');a.input('draftText','Students volunteer in their community.');a.click('analyse');assert(a.el('feedbackFreshness').hidden);a.route('#plan');a.input('planFocus','New focus');a.route('#draft');assert(!a.el('feedbackFreshness').hidden);a.click('analyse');assert(a.el('feedbackFreshness').hidden);assert(a.doc.querySelector('#writingFeedback').textContent.includes('New focus'));a.close();
+});
+test('Restored order answers without chunks support build and undo',()=>{
+ const E=require('../assets/engine.js'),saved=E.defaultState();saved.answers['essay-foundation-order-1']={value:'',checked:false};const a=setup('#practice?question=13',saved);a.doc.querySelector('[data-chunk]').click();assert.deepEqual(a.errors,[]);assert.equal(a.state().answers['essay-foundation-order-1'].chunks.length,1);a.click('undoChunk');assert.equal(a.state().answers['essay-foundation-order-1'].chunks.length,0);a.close();
+});
+test('Every supplementary practice format has a working development CTA',()=>{
+ const a=setup();for(const g of Object.keys(a.w.STUDIO_DATA.genres).filter(g=>!['essay','biography'].includes(g))){a.input('genre',g,'change');a.route('#practice');const link=a.doc.querySelector('main a[href="#develop"]');assert(link,g);a.route(link.getAttribute('href'));assert(a.el('develop-paragraph'),g);}a.close();
+});
