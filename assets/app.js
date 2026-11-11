@@ -80,7 +80,8 @@ function practicePage(){if(!isFocusRoute())return reviewPage()+`<div class="acti
     <label for="questionSelect">Jump to a question<select id="questionSelect">${qs.map((x,i)=>`<option value="${i}" ${i===selectedQuestion?'selected':''}>${i+1}. ${h(x.title)}</option>`).join('')}</select></label>
     <div class="actions"><button id="prevQuestion" ${selectedQuestion===0?'disabled':''}>Previous question</button>
      ${!a.checked&&!lastQuestion?'<button id="nextQuestion">Skip for now</button>':''}
-     ${a.checked?'<button id="resetActivity">Reset this question</button>':'<button id="clearAnswer">Clear answer</button>'}
+     ${a.checked?'':'<button id="clearAnswer">Clear answer</button>'}
+     ${a.attempted?'<button id="resetActivity">Reset this question</button>':''}
      <a class="secondary-link" href="#develop">Go to paragraph practice</a>
     </div>
    </details>
