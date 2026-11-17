@@ -57,7 +57,141 @@ function practicePage(){if(!isFocusRoute())return reviewPage()+`<div class="acti
  else if(q.kind==='order'){const chunks=q.answers[0].split(' '),used=a.chunks||[];input=`<p class="help">Select chunks in order. Every chunk is a button: use Tab and Enter, or type a complete alternative below.</p><div class="word-bank">${chunks.map((w,i)=>({w,i})).reverse().map(({w,i})=>`<button data-chunk="${i}" ${used.includes(i)||a.checked?'disabled':''}>${h(w)}</button>`).join('')}</div><p class="sentence-output" aria-label="Built sentence">${h(used.map(i=>chunks[i]).join(' ')||'Your sentence will appear here.')}</p><div class="actions"><button id="undoChunk">Undo last chunk</button><button id="clearChunks">Clear sentence</button></div><label for="practiceText">Or type the complete sentence<input id="practiceText" value="${h(a.typed||'')}" ${a.checked?'disabled':''}></label>`;}
  else input=`<label for="practiceText">Your answer<input id="practiceText" value="${h(a.value)}" autocomplete="off" ${a.checked?'disabled':''}></label>`;
  return intro('03 · PRACTICE CHECKPOINTS','Make each choice<br>serve the meaning.','Practise language in the topic context. These scores describe closed-answer practice, not your writing ability.')+`<section class="panel"><div class="task-top"><span class="badge">${h(state.settings.pathway)} · ${h(currentGenre().name)}</span><span class="score-box">First-attempt accuracy: ${score}/${done||0} attempted · ${qs.length} questions</span></div><label for="questionSelect" style="margin-top:20px">Choose a checkpoint<select id="questionSelect">${qs.map((x,i)=>`<option value="${i}" ${i===selectedQuestion?'selected':''}>${i+1}. ${h(x.title)}</option>`).join('')}</select></label><h2 style="margin-top:25px">${h(q.title)}</h2><p class="context-quote">${h(q.stem)}</p>${input}<div class="actions"><button id="checkAnswer" class="primary" ${a.checked?'disabled':''}>Check</button><button id="tryAgain">Try again</button><button id="clearAnswer">Clear answer</button><button id="resetActivity">Reset activity</button><button id="showHint">Hint</button></div><p id="practiceHint" class="notice" hidden>${h(q.hint)}</p><p id="practiceValidation" role="status"></p>${a.checked?`<div class="feedback ${a.correct?'':'error'}" role="status"><h3>${a.correct?'Correct for this item.':'Not quite — compare and retry.'}</h3><p>Accepted answer${q.answers.length>1?'s':''}: <strong>${h(q.answers.join(' / '))}</strong></p><p>${h(q.explanation)}</p><p class="help">${h(q.hint)} A retry helps you learn; it does not change your first-attempt result.</p></div>`:''}<div class="actions"><button id="prevQuestion" ${selectedQuestion===0?'disabled':''}>Previous checkpoint</button><button id="nextQuestion" ${selectedQuestion===qs.length-1?'disabled':''}>Next checkpoint</button><a class="secondary-link" href="#develop">Develop your own paragraph</a></div></section>`;}
-function developPage(){const key=group(),a=state.development[key]||{},model=currentGenre().model;return intro('04 · DEVELOP',isArgument()?'Turn a reason<br>into an argument.':isBio()?'Turn an achievement<br>into a meaningful account.':'Develop an example.<br>Explain its significance.','Notice what the example demonstrates. Explain the connection rather than leaving your reader to infer it.')+`<div class="grid"><section class="panel warm"><span class="badge">Underdeveloped practice example</span><p class="model" style="margin-top:16px">${h(model.weak)}</p><p class="help">Which claims need explanation or specific support?</p></section><section class="panel soft"><span class="badge">Developed model · original teaching text</span><p class="model" style="margin-top:16px">${h(model.strong)}</p><p class="help">${state.settings.genre==='biography'?'Maya is fictional. The timeline distinguishes completed preparation from an ongoing earlier period.':'The project is hypothetical. No invented research result is presented as fact.'}</p></section></div><section class="panel" style="margin-top:20px"><h2>Notice the development</h2><ol class="annotated"><li><strong>Point:</strong> Identify the claim or admirable quality.</li><li><strong>Explanation:</strong> Find the reason the point matters.</li><li><strong>Example:</strong> Identify a specific action or scenario.</li><li><strong>Analysis:</strong> Explain what the action demonstrates.</li><li><strong>Link:</strong> Connect the interpretation to the thesis or central focus.</li></ol><p class="notice">${state.settings.pathway==='challenge'?'Challenge: identify a reasonable limitation or alternative interpretation. In an essay, evaluate a counterargument; in a biography, consider how much one event can show about character.':state.settings.pathway==='core'?'Core: remove the model and develop a different example that supports the same focus.':'Foundation: identify the five functions in the model, then change the example and explain the new connection.'}</p>${[['explanation','Complete the missing explanation',isFocusRoute()?(isArgument()?'A reading mentor can develop patience because …':'Maya’s response to the setback demonstrates perseverance because …'):'My example supports the main idea because …'],['link','Complete the missing link',isFocusRoute()?(isArgument()?'This example strengthens the case for student choice because …':'This achievement helps explain why Maya is admirable because …'):'This example connects to my central focus because …'],['paragraph','Write an original developed paragraph','Use your own point, explanation, specific example, analysis and link. These functions may share sentences.']].map(([k,label,ph])=>`<label for="develop-${k}" style="margin-top:16px">${label}<textarea id="develop-${k}" data-develop="${k}" placeholder="${h(ph)}" rows="${k==='paragraph'?6:3}">${h(a[k]||'')}</textarea></label>`).join('')}${scaffold()}<div class="actions"><button id="developReview" class="primary">Open targeted self-review</button><button id="clearDevelop">Reset these paragraph tasks</button><a class="secondary-link" href="#draft">Next · Your original draft</a></div><div id="developFeedback"></div></section>`;}
+const letterDevelopment = {
+  "letter-reference-1": {
+    "goal": "Tell your friend what happened and how recovery went",
+    "weak": "I hurt my wrist at practice. It got better.",
+    "model": "I hurt my wrist at basketball practice last Friday. At the clinic, the doctor gave me a wrist support. By Monday, I could write comfortably again, which was a relief with exams coming up.",
+    "firstCheck": "Name the injury and say when it happened.",
+    "secondCheck": "Describe one part of the treatment.",
+    "thirdCheck": "Show what changed during recovery and how you felt.",
+    "practice": "Your friend already knows you hurt your wrist. Add one detail that shows how you knew it was getting better.",
+    "starter": "By Monday, I could …",
+    "answer": "By Monday, I could write comfortably again.",
+    "firstFrame": "It happened when …",
+    "secondFrame": "At the clinic, …",
+    "thirdFrame": "By the following …, I could …",
+    "challenge": "Explain how one stage of your recovery affected your school day or plans with your friend."
+  },
+  "letter-reference-2": {
+    "goal": "Explain a medical innovation to your friend",
+    "weak": "Video appointments are amazing. They help people.",
+    "model": "Have you heard of telemedicine? It means you can speak to a healthcare professional without going to the clinic in person. Imagine someone who lives far from the clinic being able to ask a follow-up question by video. For that person, a quick check-in could save a long journey.",
+    "firstCheck": "Name the innovation and explain it in everyday language.",
+    "secondCheck": "Give a realistic example of how someone might use it.",
+    "thirdCheck": "Show what changes for the person in that example.",
+    "practice": "Your friend knows what a video appointment is. Explain who might find one useful and why.",
+    "starter": "For someone who …, it could …",
+    "answer": "For someone who lives far from a clinic, it could save a long journey for a follow-up conversation.",
+    "firstFrame": "Have you heard of …?",
+    "secondFrame": "It lets people …",
+    "thirdFrame": "Imagine someone who …",
+    "challenge": "Explain one benefit and qualify when it would apply."
+  },
+  "letter-reference-3": {
+    "goal": "Describe a hospital visit and show what it changed",
+    "weak": "I visited the hospital and changed my mind about healthcare.",
+    "model": "I went with my uncle to the hospital last week. I used to think the tests were the most important part of a visit, but I saw how much it mattered when a nurse drew a quick diagram to explain one to him. He looked less worried afterwards. I came away thinking that explaining things clearly is a big part of patient care.",
+    "firstCheck": "Set the scene and say what you used to think.",
+    "secondCheck": "Show the moment that made you reconsider.",
+    "thirdCheck": "Explain what you think now.",
+    "practice": "Your friend knows the nurse drew a diagram. Explain how seeing that moment changed what you thought about healthcare.",
+    "starter": "I used to think …, but now …",
+    "answer": "I used to think the tests mattered most, but now I see how important a clear explanation can be.",
+    "firstFrame": "Last week, I went …",
+    "secondFrame": "What surprised me was …",
+    "thirdFrame": "I came away thinking …",
+    "challenge": "Show the shift in perspective through a specific action or reaction your friend can picture."
+  },
+  "letter-reference-4": {
+    "goal": "Turn something you learned into advice for a friend",
+    "weak": "You should be more careful about hygiene at school.",
+    "model": "We talked about handwashing in class this week, and I learned how easily germs can spread from our hands. It made me think of our lunch breaks. Why not wash your hands before you eat? If you’re usually in a rush, you could stop at the sink on your way to the canteen.",
+    "firstCheck": "Say what you recently learned and where you learned it.",
+    "secondCheck": "Give your friend a specific suggestion in a friendly tone.",
+    "thirdCheck": "Make the suggestion practical for your friend’s routine.",
+    "practice": "You’ve suggested washing hands before lunch. Your friend usually rushes straight to the canteen. Add one sentence that makes your suggestion easier to follow.",
+    "starter": "If you’re in a rush, you could …",
+    "answer": "If you’re in a rush, you could stop at the sink on your way to the canteen.",
+    "firstFrame": "In …, I recently learned that …",
+    "secondFrame": "You could try … when …",
+    "thirdFrame": "If …, you could …",
+    "challenge": "Adapt your advice to a friend with a different routine or explain why the suggestion might suit them."
+  },
+  "letter-reference-5": {
+    "goal": "Describe a traditional practice and give your honest opinion",
+    "weak": "I read about acupuncture. I think it’s interesting.",
+    "model": "I read a short article about acupuncture yesterday. It described how a practitioner places very thin needles at specific points on the body. I’d be curious to watch how a session works, though I’d want to read more about why someone might choose it before deciding what I think about using it myself.",
+    "firstCheck": "Say where you read about the practice and describe what it involves.",
+    "secondCheck": "Give your own reaction in a friendly voice.",
+    "thirdCheck": "Explain the reason for your reaction or what you would still like to learn.",
+    "practice": "Your friend knows what the practice involves. Add a sentence that explains why you’re curious or what you’d like to find out.",
+    "starter": "I’d be curious to … because …",
+    "answer": "I’d be curious to watch a session because the article described the needles but gave little detail about what happens during an appointment.",
+    "firstFrame": "I read about … in …",
+    "secondFrame": "The article described …",
+    "thirdFrame": "What I’d like to find out is …",
+    "challenge": "Separate what the source described from your own opinion and explain how you formed that opinion."
+  }
+};
+function developmentKey() {
+  return state.settings.genre === 'letter' ? group() + '-' + currentPrompt().id : group();
+}
+function letterDevelopPage() {
+  const prompt = currentPrompt();
+  const {goal, weak, model, firstCheck, secondCheck, thirdCheck, practice, starter, answer,
+    firstFrame, secondFrame, thirdFrame, challenge} = letterDevelopment[prompt.id];
+  const saved = state.development[developmentKey()] || {};
+  const foundation = state.settings.pathway === 'foundation';
+  const skills = [firstCheck, secondCheck, thirdCheck];
+  const frames = [firstFrame, secondFrame, thirdFrame];
+  const taskOptions = currentGenre().prompts.map((task, index) =>
+    `<option value="${h(task.id)}"${task.id === prompt.id ? ' selected' : ''}>Task ${index + 1} · ${h(letterDevelopment[task.id].goal)}</option>`
+  ).join('');
+  return intro('04 · DEVELOP', h(goal), 'Practise one body paragraph for your informal letter.') + `
+    <section class="panel">
+      <label for="promptSelect">Choose your exact task<select id="promptSelect">${taskOptions}</select></label>
+      <p class="notice"><strong>Task brief</strong><br>${h(prompt.text)}</p>
+    </section>
+    <section class="panel" style="margin-top:20px">
+      <h2>Compare two versions</h2>
+      <div class="grid">
+        <div class="panel warm"><strong>Needs more detail</strong><p class="model">${h(weak)}</p></div>
+        <div class="panel soft"><strong>Developed body paragraph</strong><p class="model">${h(model)}</p></div>
+      </div>
+      <h3>Find these moves in the model</h3>
+      <ol>${skills.map(skill => `<li>${h(skill)}</li>`).join('')}</ol>
+    </section>
+    <section class="panel" style="margin-top:20px">
+      <h2>Try one sentence</h2>
+      <p>${h(practice)}</p>
+      <label for="develop-explanation">Write your practice sentence
+        ${foundation ? `<span class="help">Starter · ${h(starter)}</span>` : ''}
+        <textarea id="develop-explanation" data-develop="explanation" rows="3">${h(saved.explanation || '')}</textarea>
+      </label>
+      <details><summary>Reveal a sample answer</summary><p>${h(answer)}</p></details>
+    </section>
+    <section class="panel" style="margin-top:20px">
+      <h2>Write your own body paragraph</h2>
+      <p>Choose a different idea for this task. Write as if your friend will read it.</p>
+      ${state.settings.pathway === 'challenge' ? `<p class="notice">${h(challenge)}</p>` : ''}
+      <details${foundation ? ' open' : ''}><summary>Sentence starters</summary>
+        <ul>${frames.map(frame => `<li>${h(frame)}</li>`).join('')}</ul>
+      </details>
+      <label for="develop-paragraph" style="margin-top:16px">Your paragraph
+        <textarea id="develop-paragraph" data-develop="paragraph" rows="6">${h(saved.paragraph || '')}</textarea>
+      </label>
+      <details><summary>Check your paragraph</summary>
+        <ul>${[...skills, 'Read it aloud. Does it sound like something you would say to a friend?'].map(skill => `<li>${h(skill)}</li>`).join('')}</ul>
+      </details>
+      <div class="actions">
+        <button id="clearDevelop">Reset this practice</button>
+        <a class="secondary-link" href="#draft">Next · Your original draft</a>
+      </div>
+    </section>`;
+}
+
+function developPage(){if(state.settings.genre==='letter')return letterDevelopPage();const key=group(),a=state.development[key]||{},model=currentGenre().model;return intro('04 · DEVELOP',isArgument()?'Turn a reason<br>into an argument.':isBio()?'Turn an achievement<br>into a meaningful account.':'Develop an example.<br>Explain its significance.','Notice what the example demonstrates. Explain the connection rather than leaving your reader to infer it.')+`<div class="grid"><section class="panel warm"><span class="badge">Underdeveloped practice example</span><p class="model" style="margin-top:16px">${h(model.weak)}</p><p class="help">Which claims need explanation or specific support?</p></section><section class="panel soft"><span class="badge">Developed model · original teaching text</span><p class="model" style="margin-top:16px">${h(model.strong)}</p><p class="help">${state.settings.genre==='biography'?'Maya is fictional. The timeline distinguishes completed preparation from an ongoing earlier period.':'The project is hypothetical. No invented research result is presented as fact.'}</p></section></div><section class="panel" style="margin-top:20px"><h2>Notice the development</h2><ol class="annotated"><li><strong>Point:</strong> Identify the claim or admirable quality.</li><li><strong>Explanation:</strong> Find the reason the point matters.</li><li><strong>Example:</strong> Identify a specific action or scenario.</li><li><strong>Analysis:</strong> Explain what the action demonstrates.</li><li><strong>Link:</strong> Connect the interpretation to the thesis or central focus.</li></ol><p class="notice">${state.settings.pathway==='challenge'?'Challenge: identify a reasonable limitation or alternative interpretation. In an essay, evaluate a counterargument; in a biography, consider how much one event can show about character.':state.settings.pathway==='core'?'Core: remove the model and develop a different example that supports the same focus.':'Foundation: identify the five functions in the model, then change the example and explain the new connection.'}</p>${[['explanation','Complete the missing explanation',isFocusRoute()?(isArgument()?'A reading mentor can develop patience because …':'Maya’s response to the setback demonstrates perseverance because …'):'My example supports the main idea because …'],['link','Complete the missing link',isFocusRoute()?(isArgument()?'This example strengthens the case for student choice because …':'This achievement helps explain why Maya is admirable because …'):'This example connects to my central focus because …'],['paragraph','Write an original developed paragraph','Use your own point, explanation, specific example, analysis and link. These functions may share sentences.']].map(([k,label,ph])=>`<label for="develop-${k}" style="margin-top:16px">${label}<textarea id="develop-${k}" data-develop="${k}" placeholder="${h(ph)}" rows="${k==='paragraph'?6:3}">${h(a[k]||'')}</textarea></label>`).join('')}${scaffold()}<div class="actions"><button id="developReview" class="primary">Open targeted self-review</button><button id="clearDevelop">Reset these paragraph tasks</button><a class="secondary-link" href="#draft">Next · Your original draft</a></div><div id="developFeedback"></div></section>`;}
 function draftPage(){const d=draft(),g=currentGenre();return intro('05 · DRAFT → REVIEW → REVISE','Write with purpose.<br>Revise with evidence.','Keep your meaning at the centre. Browser checks quote your text and separate observable patterns from questions for human review.')+`<section class="panel"><label for="draftPrompt">Writing task<select id="draftPrompt">${g.prompts.map(t=>`<option value="${t.id}" ${t.id===currentPrompt().id?'selected':''}>${h(t.text)}</option>`).join('')}</select></label><p class="notice">${h(currentPrompt().text)}</p><p class="help">Your focus: <strong>${h(plan().focus||'Add your thesis or central focus in Plan.')}</strong> <a href="#plan">Edit your plan</a></p>${timerHTML()}<details><summary>Genre checklist · self-review your draft</summary><p>These checks are your judgement, not automatic marks.</p>${(g.checklist||["Develop specific achievements and their significance","Connect examples to the central focus","Check facts, grammar and register"]).map((item,i)=>`<label class="check-row"><input type="checkbox" data-genre-check="${i}" ${plan()["check-"+i]==="yes"?"checked":""}>${h(item)}</label>`).join("")}</details><label class="check-row"><input id="independent" type="checkbox" ${d.independent?'checked':''}>Independent mode · hide frames and models</label><div id="draftSupport" ${d.independent?'hidden':''}>${scaffold()}<details><summary>See the genre model for comparison</summary><p class="model">${h(g.model.strong)}</p><p class="help">Use the model to understand development, then write original content.</p></details></div><label for="draftText">Your original ${h(g.name.toLowerCase())}<textarea id="draftText" class="draft-box" placeholder="Develop your own ideas here. Use paragraph breaks to organise them.">${h(d.text)}</textarea></label><div class="draft-meta"><span id="wordCount">${E.countWords(d.text)} words · Suggested target ${h(currentGenre().wordRange||D.config.wordMin+'–'+D.config.wordMax+' words')}</span><span>All pathways share this saved draft · task-specific</span></div><div class="actions"><button id="analyse" class="primary">Review my text / save revision</button><button id="copyDraft">Copy writing</button><button id="downloadDraft">Download writing</button><button id="clearDraft">Clear this draft</button></div><p class="help" id="copyStatus" role="status"></p><div class="notice warning"><strong>Browser checks, not comprehensive writing assessment.</strong> No AI/backend service is connected. The checks can flag a few patterns and quote passages; they cannot certify reasoning, relevance, facts, grammar overall or a writing grade. Your teacher/peer and targeted self-review address those criteria.</div></section><section class="panel" id="writingFeedback"><p id="feedbackFreshness" class="notice warning" ${!d.feedback||feedbackIsFresh(d)?'hidden':''}>This feedback refers to a previous text or plan. Review your draft again to update the quotations, focus and checks.</p>${d.feedback?feedbackHTML(d.feedback):'<p class="muted">Your observations and two or three revision priorities will appear here after you request a review.</p>'}</section>${versionsHTML(d)}`;}
 function timerHTML(){const t=state.timer;return `<div class="timer" aria-label="Writing timer"><label for="timerMinutes">Minutes<input id="timerMinutes" type="number" min="1" max="120" value="${t.minutes}"></label><output id="timerDisplay" aria-label="Time remaining">${formatTime(remaining())}</output><button id="timerStart">${t.running?'Pause':t.remaining<=0?'Start again':'Start / resume'}</button><button id="timerReset">Reset timer</button><label class="check-row"><input id="untimed" type="checkbox" ${t.untimed?'checked':''}>Untimed</label><span class="small muted" id="timerStatus">${t.untimed?'Untimed mode':t.running?'Running':'Paused / ready'}</span></div>`;}
 function feedbackHTML(a){let out=`<h2>Review the evidence in your text</h2><span class="badge">No overall score · ${h(currentGenre().standards)}</span>`;if(a.insufficient.length)out+=`<div class="notice warning">${a.insufficient.map(s=>`<p>${h(s)}</p>`).join('')}</div>`;
@@ -83,9 +217,9 @@ function bindPage(page){
  on('promptSelect','change',e=>{state.settings.prompt=e.target.value;history.replaceState(null,'','#'+location.hash.slice(1).split('?')[0]+'?task='+encodeURIComponent(e.target.value)+'&unit='+currentGenre().unitId);lastRouteHash=location.hash;render(false);});on('draftPrompt','change',e=>{state.settings.prompt=e.target.value;history.replaceState(null,'','#'+location.hash.slice(1).split('?')[0]+'?task='+encodeURIComponent(e.target.value)+'&unit='+currentGenre().unitId);lastRouteHash=location.hash;render(false);});
  on('planFocus','input',e=>{plan().focus=e.target.value;persist();});document.querySelectorAll('[data-plan]').forEach(el=>el.addEventListener('input',e=>{plan()[e.target.dataset.plan]=e.target.value;persist();}));
  document.querySelectorAll('[data-genre-check]').forEach(el=>el.addEventListener('change',()=>{plan()['check-'+el.dataset.genreCheck]=el.checked?'yes':'';persist();}));if(page==='vocabulary')bindVocab();if(page==='practice'){if(isFocusRoute())bindPractice();else bindReview();}if(page==='review')bindReview();if(page==='tasks')bindTasks();
- document.querySelectorAll('[data-develop]').forEach(el=>el.addEventListener('input',e=>{const a=state.development[group()]||(state.development[group()]={});a[e.target.dataset.develop]=e.target.value;persist();}));
+ document.querySelectorAll('[data-develop]').forEach(el=>el.addEventListener('input',e=>{const key=developmentKey(),a=state.development[key]||(state.development[key]={});a[e.target.dataset.develop]=e.target.value;persist();}));
  on('developReview','click',()=>{const text=state.development[group()]?.paragraph||'';const a=E.analyseWriting(text,state.settings.genre,plan().focus,currentPrompt().text);$('developFeedback').innerHTML=feedbackHTML(a);document.querySelectorAll('#developFeedback [data-review]').forEach(el=>el.addEventListener('input',e=>{draft().review[e.target.dataset.review]=e.target.value;draft().updatedAt=Date.now();persist();}));announce(text?'Three passages and self-review prompts are ready. These are not quality grades.':'Write your paragraph before review.');});
- on('clearDevelop','click',()=>confirmClear('Clear the three open paragraph tasks for this genre and pathway? Your full draft is kept.',()=>{delete state.development[group()];render(false);}));
+ on('clearDevelop','click',()=>confirmClear('Clear the current paragraph practice? Your full draft is kept.',()=>{delete state.development[developmentKey()];render(false);}));
  on('draftText','input',e=>{draft().text=e.target.value;draft().updatedAt=Date.now();if($('feedbackFreshness'))$('feedbackFreshness').hidden=!draft().feedback||feedbackIsFresh(draft());$('wordCount').textContent=`${E.countWords(e.target.value)} words · Suggested target ${h(currentGenre().wordRange||D.config.wordMin+'–'+D.config.wordMax+' words')}`;persist();});
  on('independent','change',e=>{draft().independent=e.target.checked;draft().updatedAt=Date.now();$('draftSupport').hidden=e.target.checked;persist();});
  on('analyse','click',()=>{const d=draft(),a=E.analyseWriting(d.text,state.settings.genre,plan().focus,currentPrompt().text);d.feedback=a;if(d.text.trim()&&d.versions.at(-1)?.text!==d.text){d.versions.push({text:d.text,date:Date.now(),focus:plan().focus,analysis:a});d.versions=d.versions.slice(-8);}persist();render(false);$('writingFeedback').scrollIntoView({block:'start',behavior:'auto'});announce(a.wordCount?'Review ready. Check quoted observations and targeted self-review. No overall score is assigned.':'No writing submitted. Insufficient evidence for all criteria.');});
